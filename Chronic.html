@@ -1,0 +1,1340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Chronic
+  
+    &mdash; Chronic - Natural language date/time parsing
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (C)</a> &raquo; 
+    
+    
+    <span class="title">Chronic</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: Chronic
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/chronic.rb<span class="defines">,<br />
+  lib/chronic/tag.rb,<br /> lib/chronic/span.rb,<br /> lib/chronic/token.rb,<br /> lib/chronic/scalar.rb,<br /> lib/chronic/grabber.rb,<br /> lib/chronic/pointer.rb,<br /> lib/chronic/ordinal.rb,<br /> lib/chronic/chronic.rb,<br /> lib/chronic/handlers.rb,<br /> lib/chronic/repeater.rb,<br /> lib/chronic/time_zone.rb,<br /> lib/chronic/separator.rb,<br /> lib/chronic/numerizer.rb,<br /> lib/chronic/mini_date.rb,<br /> lib/chronic/repeaters/repeater_day.rb,<br /> lib/chronic/repeaters/repeater_hour.rb,<br /> lib/chronic/repeaters/repeater_year.rb,<br /> lib/chronic/repeaters/repeater_time.rb,<br /> lib/chronic/repeaters/repeater_week.rb,<br /> lib/chronic/repeaters/repeater_month.rb,<br /> lib/chronic/repeaters/repeater_second.rb,<br /> lib/chronic/repeaters/repeater_minute.rb,<br /> lib/chronic/repeaters/repeater_season.rb,<br /> lib/chronic/repeaters/repeater_weekday.rb,<br /> lib/chronic/repeaters/repeater_weekend.rb,<br /> lib/chronic/repeaters/repeater_day_name.rb,<br /> lib/chronic/repeaters/repeater_fortnight.rb,<br /> lib/chronic/repeaters/repeater_month_name.rb,<br /> lib/chronic/repeaters/repeater_day_portion.rb,<br /> lib/chronic/repeaters/repeater_season_name.rb</span>
+</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<h2>Overview</h2><div class="docstring">
+  <div class="discussion">
+    <p>Parse natural language dates and times into Time or <span class='object_link'><a href="Chronic/Span.html" title="Chronic::Span (class)">Span</a></span> objects</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='id require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>chronic</span><span class='tstring_end'>'</span></span>
+
+<span class='const'>Time</span><span class='period'>.</span><span class='id now'>now</span>   <span class='comment'>#=&gt; Sun Aug 27 23:18:25 PDT 2006
+</span>
+<span class='const'>Chronic</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tomorrow</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'>#=&gt; Mon Aug 28 12:00:00 PDT 2006
+</span>
+<span class='const'>Chronic</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>monday</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:context</span> <span class='op'>=&gt;</span> <span class='symbol'>:past</span><span class='rparen'>)</span>
+  <span class='comment'>#=&gt; Mon Aug 21 12:00:00 PDT 2006
+</span>
+<span class='const'>Chronic</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>this tuesday 5:00</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'>#=&gt; Tue Aug 29 17:00:00 PDT 2006
+</span>
+<span class='const'>Chronic</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>this tuesday 5:00</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:ambiguous_time_range</span> <span class='op'>=&gt;</span> <span class='symbol'>:none</span><span class='rparen'>)</span>
+  <span class='comment'>#=&gt; Tue Aug 29 05:00:00 PDT 2006
+</span>
+<span class='const'>Chronic</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>may 27th</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:now</span> <span class='op'>=&gt;</span> <span class='const'>Time</span><span class='period'>.</span><span class='id local'>local</span><span class='lparen'>(</span><span class='int'>2000</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='comment'>#=&gt; Sat May 27 12:00:00 PDT 2000
+</span>
+<span class='const'>Chronic</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>may 27th</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:guess</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='rparen'>)</span>
+  <span class='comment'>#=&gt; Sun May 27 00:00:00 PDT 2007..Mon May 28 00:00:00 PDT 2007</span></pre>
+    
+  </div>
+<h3>Author:</h3>
+<ul class="author">
+  
+    <li>
+      
+      
+      
+      
+        
+        <div class='inline'><p>Tom Preston-Werner, Lee Jarvis</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><h2>Defined Under Namespace</h2>
+<p class="children">
+   
+    
+      <strong class="modules">Modules:</strong> <span class='object_link'><a href="Chronic/Handlers.html" title="Chronic::Handlers (module)">Handlers</a></span>
+    
+   
+    
+      <strong class="classes">Classes:</strong> <span class='object_link'><a href="Chronic/ChronicPain.html" title="Chronic::ChronicPain (class)">ChronicPain</a></span>, <span class='object_link'><a href="Chronic/Grabber.html" title="Chronic::Grabber (class)">Grabber</a></span>, <span class='object_link'><a href="Chronic/Handler.html" title="Chronic::Handler (class)">Handler</a></span>, <span class='object_link'><a href="Chronic/InvalidArgumentException.html" title="Chronic::InvalidArgumentException (class)">InvalidArgumentException</a></span>, <span class='object_link'><a href="Chronic/MiniDate.html" title="Chronic::MiniDate (class)">MiniDate</a></span>, <span class='object_link'><a href="Chronic/Numerizer.html" title="Chronic::Numerizer (class)">Numerizer</a></span>, <span class='object_link'><a href="Chronic/Ordinal.html" title="Chronic::Ordinal (class)">Ordinal</a></span>, <span class='object_link'><a href="Chronic/OrdinalDay.html" title="Chronic::OrdinalDay (class)">OrdinalDay</a></span>, <span class='object_link'><a href="Chronic/Pointer.html" title="Chronic::Pointer (class)">Pointer</a></span>, <span class='object_link'><a href="Chronic/Repeater.html" title="Chronic::Repeater (class)">Repeater</a></span>, <span class='object_link'><a href="Chronic/RepeaterDay.html" title="Chronic::RepeaterDay (class)">RepeaterDay</a></span>, <span class='object_link'><a href="Chronic/RepeaterDayName.html" title="Chronic::RepeaterDayName (class)">RepeaterDayName</a></span>, <span class='object_link'><a href="Chronic/RepeaterDayPortion.html" title="Chronic::RepeaterDayPortion (class)">RepeaterDayPortion</a></span>, <span class='object_link'><a href="Chronic/RepeaterFortnight.html" title="Chronic::RepeaterFortnight (class)">RepeaterFortnight</a></span>, <span class='object_link'><a href="Chronic/RepeaterHour.html" title="Chronic::RepeaterHour (class)">RepeaterHour</a></span>, <span class='object_link'><a href="Chronic/RepeaterMinute.html" title="Chronic::RepeaterMinute (class)">RepeaterMinute</a></span>, <span class='object_link'><a href="Chronic/RepeaterMonth.html" title="Chronic::RepeaterMonth (class)">RepeaterMonth</a></span>, <span class='object_link'><a href="Chronic/RepeaterMonthName.html" title="Chronic::RepeaterMonthName (class)">RepeaterMonthName</a></span>, <span class='object_link'><a href="Chronic/RepeaterSeason.html" title="Chronic::RepeaterSeason (class)">RepeaterSeason</a></span>, <span class='object_link'><a href="Chronic/RepeaterSeasonName.html" title="Chronic::RepeaterSeasonName (class)">RepeaterSeasonName</a></span>, <span class='object_link'><a href="Chronic/RepeaterSecond.html" title="Chronic::RepeaterSecond (class)">RepeaterSecond</a></span>, <span class='object_link'><a href="Chronic/RepeaterTime.html" title="Chronic::RepeaterTime (class)">RepeaterTime</a></span>, <span class='object_link'><a href="Chronic/RepeaterWeek.html" title="Chronic::RepeaterWeek (class)">RepeaterWeek</a></span>, <span class='object_link'><a href="Chronic/RepeaterWeekday.html" title="Chronic::RepeaterWeekday (class)">RepeaterWeekday</a></span>, <span class='object_link'><a href="Chronic/RepeaterWeekend.html" title="Chronic::RepeaterWeekend (class)">RepeaterWeekend</a></span>, <span class='object_link'><a href="Chronic/RepeaterYear.html" title="Chronic::RepeaterYear (class)">RepeaterYear</a></span>, <span class='object_link'><a href="Chronic/Scalar.html" title="Chronic::Scalar (class)">Scalar</a></span>, <span class='object_link'><a href="Chronic/ScalarDay.html" title="Chronic::ScalarDay (class)">ScalarDay</a></span>, <span class='object_link'><a href="Chronic/ScalarMonth.html" title="Chronic::ScalarMonth (class)">ScalarMonth</a></span>, <span class='object_link'><a href="Chronic/ScalarYear.html" title="Chronic::ScalarYear (class)">ScalarYear</a></span>, <span class='object_link'><a href="Chronic/Season.html" title="Chronic::Season (class)">Season</a></span>, <span class='object_link'><a href="Chronic/Separator.html" title="Chronic::Separator (class)">Separator</a></span>, <span class='object_link'><a href="Chronic/SeparatorAt.html" title="Chronic::SeparatorAt (class)">SeparatorAt</a></span>, <span class='object_link'><a href="Chronic/SeparatorComma.html" title="Chronic::SeparatorComma (class)">SeparatorComma</a></span>, <span class='object_link'><a href="Chronic/SeparatorIn.html" title="Chronic::SeparatorIn (class)">SeparatorIn</a></span>, <span class='object_link'><a href="Chronic/SeparatorOn.html" title="Chronic::SeparatorOn (class)">SeparatorOn</a></span>, <span class='object_link'><a href="Chronic/SeparatorSlashOrDash.html" title="Chronic::SeparatorSlashOrDash (class)">SeparatorSlashOrDash</a></span>, <span class='object_link'><a href="Chronic/Span.html" title="Chronic::Span (class)">Span</a></span>, <span class='object_link'><a href="Chronic/Tag.html" title="Chronic::Tag (class)">Tag</a></span>, <span class='object_link'><a href="Chronic/TimeZone.html" title="Chronic::TimeZone (class)">TimeZone</a></span>, <span class='object_link'><a href="Chronic/Token.html" title="Chronic::Token (class)">Token</a></span>
+    
+  
+</p>
+
+  <h2>Constant Summary</h2>
+  
+    <dl class="constants">
+      
+        <dt id="VERSION-constant" class="">VERSION =
+          
+        </dt>
+        <dd><pre class="code"><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>0.4.3</span><span class='tstring_end'>&quot;</span></span></pre></dd>
+      
+        <dt id="DEFAULT_OPTIONS-constant" class="">DEFAULT_OPTIONS =
+          
+        </dt>
+        <dd><pre class="code"><span class='lbrace'>{</span>
+  <span class='symbol'>:context</span> <span class='op'>=&gt;</span> <span class='symbol'>:future</span><span class='comma'>,</span>
+  <span class='symbol'>:now</span> <span class='op'>=&gt;</span> <span class='kw'>nil</span><span class='comma'>,</span>
+  <span class='symbol'>:guess</span> <span class='op'>=&gt;</span> <span class='kw'>true</span><span class='comma'>,</span>
+  <span class='symbol'>:ambiguous_time_range</span> <span class='op'>=&gt;</span> <span class='int'>6</span><span class='comma'>,</span>
+  <span class='symbol'>:endian_precedence</span>    <span class='op'>=&gt;</span> <span class='lbracket'>[</span><span class='symbol'>:middle</span><span class='comma'>,</span> <span class='symbol'>:little</span><span class='rbracket'>]</span><span class='comma'>,</span>
+  <span class='symbol'>:ambiguous_year_future_bias</span> <span class='op'>=&gt;</span> <span class='int'>50</span>
+<span class='rbrace'>}</span></pre></dd>
+      
+    </dl>
+  
+
+
+  <h2>Class Attribute Summary <small>(<a href="#" class="summary_toggle">collapse</a>)</small></h2>
+  <ul class="summary">
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#debug-class_method" title="debug (class method)">+ (Boolean) <strong>debug</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>True when debug mode is enabled.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#now-class_method" title="now (class method)">+ (Time<sup>?</sup>) <strong>now</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>The current Time Chronic is using to base from.</p>
+</div></span>
+  
+</li>
+
+    
+      <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#time_class-class_method" title="time_class (class method)">+ (Time) <strong>time_class</strong> </a>
+    
+
+    
+  </span>
+  
+  
+    
+    
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>The time class Chronic uses internally.</p>
+</div></span>
+  
+</li>
+
+    
+  </ul>
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#definitions-class_method" title="definitions (class method)">+ (Hash) <strong>definitions</strong>(options = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>List of <span class='object_link'><a href="Chronic/Handler.html" title="Chronic::Handler (class)">Handler</a></span> definitions.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#guess-class_method" title="guess (class method)">+ (Time) <strong>guess</strong>(span) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Guess a specific time within the given span.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#numericize_numbers-class_method" title="numericize_numbers (class method)">+ (String) <strong>numericize_numbers</strong>(text) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Convert number words to numbers (three => 3, fourth => 4th).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#parse-class_method" title="parse (class method)">+ (Time, ...) <strong>parse</strong>(text, opts = {}) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Parses a string containing a natural language date or time.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#pre_normalize-class_method" title="pre_normalize (class method)">+ (String) <strong>pre_normalize</strong>(text) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Clean up the specified text ready for parsing.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  <div id="class_attr_details" class="attr_details">
+    <h2>Class Attribute Details</h2>
+    
+      
+      <span id="debug=-class_method"></span>
+      <span id="debug-class_method"></span>
+      <div class="method_details first">
+  <p class="signature first" id="debug-class_method">
+  
+    + (<tt>Boolean</tt>) <strong>debug</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>True when debug mode is enabled</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Boolean</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>true when debug mode is enabled</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+36
+37
+38</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic.rb', line 36</span>
+
+<span class='kw'>def</span> <span class='id debug'>debug</span>
+  <span class='ivar'>@debug</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="now=-class_method"></span>
+      <span id="now-class_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="now-class_method">
+  
+    + (<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt><sup>?</sup>) <strong>now</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>The current Time Chronic is using to base from</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='const'>Time</span><span class='period'>.</span><span class='id now'>now</span> <span class='comment'>#=&gt; 2011-06-06 14:13:43 +0100
+</span><span class='const'>Chronic</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>yesterday</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span> <span class='comment'>#=&gt; 2011-06-05 12:00:00 +0100
+</span>
+<span class='id now'>now</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id local'>local</span><span class='lparen'>(</span><span class='int'>2025</span><span class='comma'>,</span> <span class='int'>12</span><span class='comma'>,</span> <span class='int'>24</span><span class='rparen'>)</span>
+<span class='const'>Chronic</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tomorrow</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:now</span> <span class='op'>=&gt;</span> <span class='id now'>now</span><span class='rparen'>)</span> <span class='comment'>#=&gt; 2025-12-25 12:00:00 +0000</span></pre>
+    
+  </div>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+60
+61
+62</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic.rb', line 60</span>
+
+<span class='kw'>def</span> <span class='id now'>now</span>
+  <span class='ivar'>@now</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      
+      <span id="time_class=-class_method"></span>
+      <span id="time_class-class_method"></span>
+      <div class="method_details ">
+  <p class="signature " id="time_class-class_method">
+  
+    + (<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>) <strong>time_class</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>The time class Chronic uses internally</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='id require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>chronic</span><span class='tstring_end'>'</span></span>
+<span class='id require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>active_support/time</span><span class='tstring_end'>'</span></span>
+
+<span class='const'>Time</span><span class='period'>.</span><span class='id zone'>zone</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>UTC</span><span class='tstring_end'>'</span></span>
+<span class='const'>Chronic</span><span class='period'>.</span><span class='id time_class'>time_class</span> <span class='op'>=</span> <span class='const'>Time</span><span class='period'>.</span><span class='id zone'>zone</span>
+<span class='const'>Chronic</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>June 15 2006 at 5:54 AM</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'># =&gt; Thu, 15 Jun 2006 05:45:00 UTC +00:00</span></pre>
+    
+  </div>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The time class Chronic uses internally</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+48
+49
+50</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic.rb', line 48</span>
+
+<span class='kw'>def</span> <span class='id time_class'>time_class</span>
+  <span class='ivar'>@time_class</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="definitions-class_method">
+  
+    + (<tt>Hash</tt>) <strong>definitions</strong>(options = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>List of <span class='object_link'><a href="Chronic/Handler.html" title="Chronic::Handler (class)">Handler</a></span> definitions. See <span class='object_link'><a href="#parse-class_method" title="Chronic.parse (method)">parse</a></span> for a list of options this
+method accepts</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A Hash of Handler definitions</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <h3>See Also:</h3>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="#parse-class_method" title="Chronic.parse (method)">parse</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/chronic.rb', line 166</span>
+
+<span class='kw'>def</span> <span class='id definitions'>definitions</span><span class='lparen'>(</span><span class='id options'>options</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:endian_precedence</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='lbracket'>[</span><span class='symbol'>:middle</span><span class='comma'>,</span> <span class='symbol'>:little</span><span class='rbracket'>]</span>
+
+  <span class='ivar'>@definitions</span> <span class='op'>||=</span> <span class='lbrace'>{</span>
+    <span class='symbol'>:time</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:repeater_time</span><span class='comma'>,</span> <span class='symbol'>:repeater_day_portion?</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='kw'>nil</span><span class='rparen'>)</span>
+    <span class='rbracket'>]</span><span class='comma'>,</span>
+
+    <span class='symbol'>:date</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:repeater_day_name</span><span class='comma'>,</span> <span class='symbol'>:repeater_month_name</span><span class='comma'>,</span> <span class='symbol'>:scalar_day</span><span class='comma'>,</span> <span class='symbol'>:repeater_time</span><span class='comma'>,</span> <span class='symbol'>:separator_slash_or_dash?</span><span class='comma'>,</span> <span class='symbol'>:time_zone</span><span class='comma'>,</span> <span class='symbol'>:scalar_year</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_rdn_rmn_sd_t_tz_sy</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:repeater_month_name</span><span class='comma'>,</span> <span class='symbol'>:scalar_day</span><span class='comma'>,</span> <span class='symbol'>:scalar_year</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_rmn_sd_sy</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:repeater_month_name</span><span class='comma'>,</span> <span class='symbol'>:ordinal_day</span><span class='comma'>,</span> <span class='symbol'>:scalar_year</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_rmn_od_sy</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:repeater_month_name</span><span class='comma'>,</span> <span class='symbol'>:scalar_day</span><span class='comma'>,</span> <span class='symbol'>:scalar_year</span><span class='comma'>,</span> <span class='symbol'>:separator_at?</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>time?</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_rmn_sd_sy</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:repeater_month_name</span><span class='comma'>,</span> <span class='symbol'>:ordinal_day</span><span class='comma'>,</span> <span class='symbol'>:scalar_year</span><span class='comma'>,</span> <span class='symbol'>:separator_at?</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>time?</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_rmn_od_sy</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:repeater_month_name</span><span class='comma'>,</span> <span class='symbol'>:scalar_day</span><span class='comma'>,</span> <span class='symbol'>:separator_at?</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>time?</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_rmn_sd</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:repeater_time</span><span class='comma'>,</span> <span class='symbol'>:repeater_day_portion?</span><span class='comma'>,</span> <span class='symbol'>:separator_on?</span><span class='comma'>,</span> <span class='symbol'>:repeater_month_name</span><span class='comma'>,</span> <span class='symbol'>:scalar_day</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_rmn_sd_on</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:repeater_month_name</span><span class='comma'>,</span> <span class='symbol'>:ordinal_day</span><span class='comma'>,</span> <span class='symbol'>:separator_at?</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>time?</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_rmn_od</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:repeater_time</span><span class='comma'>,</span> <span class='symbol'>:repeater_day_portion?</span><span class='comma'>,</span> <span class='symbol'>:separator_on?</span><span class='comma'>,</span> <span class='symbol'>:repeater_month_name</span><span class='comma'>,</span> <span class='symbol'>:ordinal_day</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_rmn_od_on</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:repeater_month_name</span><span class='comma'>,</span> <span class='symbol'>:scalar_year</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_rmn_sy</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:scalar_day</span><span class='comma'>,</span> <span class='symbol'>:repeater_month_name</span><span class='comma'>,</span> <span class='symbol'>:scalar_year</span><span class='comma'>,</span> <span class='symbol'>:separator_at?</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>time?</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_sd_rmn_sy</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:scalar_year</span><span class='comma'>,</span> <span class='symbol'>:separator_slash_or_dash</span><span class='comma'>,</span> <span class='symbol'>:scalar_month</span><span class='comma'>,</span> <span class='symbol'>:separator_slash_or_dash</span><span class='comma'>,</span> <span class='symbol'>:scalar_day</span><span class='comma'>,</span> <span class='symbol'>:separator_at?</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>time?</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_sy_sm_sd</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:scalar_month</span><span class='comma'>,</span> <span class='symbol'>:separator_slash_or_dash</span><span class='comma'>,</span> <span class='symbol'>:scalar_year</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_sm_sy</span><span class='rparen'>)</span>
+    <span class='rbracket'>]</span><span class='comma'>,</span>
+
+    <span class='comment'># tonight at 7pm
+</span>    <span class='symbol'>:anchor</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:grabber?</span><span class='comma'>,</span> <span class='symbol'>:repeater</span><span class='comma'>,</span> <span class='symbol'>:separator_at?</span><span class='comma'>,</span> <span class='symbol'>:repeater?</span><span class='comma'>,</span> <span class='symbol'>:repeater?</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_r</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:grabber?</span><span class='comma'>,</span> <span class='symbol'>:repeater</span><span class='comma'>,</span> <span class='symbol'>:repeater</span><span class='comma'>,</span> <span class='symbol'>:separator_at?</span><span class='comma'>,</span> <span class='symbol'>:repeater?</span><span class='comma'>,</span> <span class='symbol'>:repeater?</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_r</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:repeater</span><span class='comma'>,</span> <span class='symbol'>:grabber</span><span class='comma'>,</span> <span class='symbol'>:repeater</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_r_g_r</span><span class='rparen'>)</span>
+    <span class='rbracket'>]</span><span class='comma'>,</span>
+
+    <span class='comment'># 3 weeks from now, in 2 months
+</span>    <span class='symbol'>:arrow</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:scalar</span><span class='comma'>,</span> <span class='symbol'>:repeater</span><span class='comma'>,</span> <span class='symbol'>:pointer</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_s_r_p</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:pointer</span><span class='comma'>,</span> <span class='symbol'>:scalar</span><span class='comma'>,</span> <span class='symbol'>:repeater</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_p_s_r</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:scalar</span><span class='comma'>,</span> <span class='symbol'>:repeater</span><span class='comma'>,</span> <span class='symbol'>:pointer</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>anchor</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_s_r_p_a</span><span class='rparen'>)</span>
+    <span class='rbracket'>]</span><span class='comma'>,</span>
+
+    <span class='comment'># 3rd week in march
+</span>    <span class='symbol'>:narrow</span> <span class='op'>=&gt;</span> <span class='lbracket'>[</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:ordinal</span><span class='comma'>,</span> <span class='symbol'>:repeater</span><span class='comma'>,</span> <span class='symbol'>:separator_in</span><span class='comma'>,</span> <span class='symbol'>:repeater</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_o_r_s_r</span><span class='rparen'>)</span><span class='comma'>,</span>
+      <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:ordinal</span><span class='comma'>,</span> <span class='symbol'>:repeater</span><span class='comma'>,</span> <span class='symbol'>:grabber</span><span class='comma'>,</span> <span class='symbol'>:repeater</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_o_r_g_r</span><span class='rparen'>)</span>
+    <span class='rbracket'>]</span>
+  <span class='rbrace'>}</span>
+
+  <span class='id endians'>endians</span> <span class='op'>=</span> <span class='lbracket'>[</span>
+    <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:scalar_month</span><span class='comma'>,</span> <span class='symbol'>:separator_slash_or_dash</span><span class='comma'>,</span> <span class='symbol'>:scalar_day</span><span class='comma'>,</span> <span class='symbol'>:separator_slash_or_dash</span><span class='comma'>,</span> <span class='symbol'>:scalar_year</span><span class='comma'>,</span> <span class='symbol'>:separator_at?</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>time?</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_sm_sd_sy</span><span class='rparen'>)</span><span class='comma'>,</span>
+    <span class='const'>Handler</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='symbol'>:scalar_day</span><span class='comma'>,</span> <span class='symbol'>:separator_slash_or_dash</span><span class='comma'>,</span> <span class='symbol'>:scalar_month</span><span class='comma'>,</span> <span class='symbol'>:separator_slash_or_dash</span><span class='comma'>,</span> <span class='symbol'>:scalar_year</span><span class='comma'>,</span> <span class='symbol'>:separator_at?</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>time?</span><span class='tstring_end'>'</span></span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='symbol'>:handle_sd_sm_sy</span><span class='rparen'>)</span>
+  <span class='rbracket'>]</span>
+
+  <span class='kw'>case</span> <span class='id endian'>endian</span> <span class='op'>=</span> <span class='const'>Array</span><span class='lparen'>(</span><span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:endian_precedence</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='period'>.</span><span class='id first'>first</span>
+  <span class='kw'>when</span> <span class='symbol'>:little</span>
+    <span class='ivar'>@definitions</span><span class='lbracket'>[</span><span class='symbol'>:endian</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id endians'>endians</span><span class='period'>.</span><span class='id reverse'>reverse</span>
+  <span class='kw'>when</span> <span class='symbol'>:middle</span>
+    <span class='ivar'>@definitions</span><span class='lbracket'>[</span><span class='symbol'>:endian</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id endians'>endians</span>
+  <span class='kw'>else</span>
+    <span class='id raise'>raise</span> <span class='const'>InvalidArgumentException</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Unknown endian option '</span><span class='embexpr_beg'>#{</span><span class='id endian'>endian</span><span class='rbrace'>}</span><span class='tstring_content'>'</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='ivar'>@definitions</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="guess-class_method">
+  
+    + (<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>) <strong>guess</strong>(span) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Guess a specific time within the given span</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>span</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Chronic/Span.html" title="Chronic::Span (class)">Span</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+152
+153
+154
+155
+156
+157
+158
+159</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/chronic.rb', line 152</span>
+
+<span class='kw'>def</span> <span class='id guess'>guess</span><span class='lparen'>(</span><span class='id span'>span</span><span class='rparen'>)</span>
+  <span class='kw'>return</span> <span class='kw'>nil</span> <span class='kw'>if</span> <span class='id span'>span</span><span class='period'>.</span><span class='id nil?'>nil?</span>
+  <span class='kw'>if</span> <span class='id span'>span</span><span class='period'>.</span><span class='id width'>width</span> <span class='op'>&gt;</span> <span class='int'>1</span>
+    <span class='id span'>span</span><span class='period'>.</span><span class='id begin'>begin</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='id span'>span</span><span class='period'>.</span><span class='id width'>width</span> <span class='op'>/</span> <span class='int'>2</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id span'>span</span><span class='period'>.</span><span class='id begin'>begin</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="numericize_numbers-class_method">
+  
+    + (<tt>String</tt>) <strong>numericize_numbers</strong>(text) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Convert number words to numbers (three => 3, fourth => 4th)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>text</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The string to convert</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A new string with words converted to numbers</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  <h3>See Also:</h3>
+  <ul class="see">
+    
+      <li><span class='object_link'><a href="Chronic/Numerizer.html#numerize-class_method" title="Chronic::Numerizer.numerize (method)">Chronic::Numerizer.numerize</a></span></li>
+    
+  </ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+144
+145
+146</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/chronic.rb', line 144</span>
+
+<span class='kw'>def</span> <span class='id numericize_numbers'>numericize_numbers</span><span class='lparen'>(</span><span class='id text'>text</span><span class='rparen'>)</span>
+  <span class='const'>Numerizer</span><span class='period'>.</span><span class='id numerize'>numerize</span><span class='lparen'>(</span><span class='id text'>text</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="parse-class_method">
+  
+    + (<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>, ...) <strong>parse</strong>(text, opts = {}) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Parses a string containing a natural language date or time</p>
+
+<p>If the parser can find a date or time, either a Time or Chronic::Span
+will be returned (depending on the value of <code>:guess</code>). If no
+date or time can be found, <code>nil</code> will be returned</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>text</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The text to parse</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>opts</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>{}</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'><p>a customizable set of options</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+  
+    
+    
+    
+    
+    <h3>Options Hash (<tt>opts</tt>):</h3>
+    <ul class="option">
+      
+        <li>
+          <span class="name">:context</span>
+          <span class="type">(<tt>Symbol</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>:future</tt>
+            
+          </span>
+          &mdash; <div class='inline'><ul>
+<li>If your string represents a birthday, you can set <code>:context</code> to
+<code>:past</code> and if an ambiguous string is given, it will assume it is
+in the past. Specify <code>:future</code> or omit to set a future context.</li>
+</ul>
+
+</div>
+        </tr>
+      
+        <li>
+          <span class="name">:now</span>
+          <span class="type">(<tt>Object</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>Time.now</tt>
+            
+          </span>
+          &mdash; <div class='inline'><ul>
+<li>By setting <code>:now</code> to a Time, all computations will be based off of
+that time instead of <code>Time.now</code>. If set to nil, Chronic will use
+<code>Time.now</code></li>
+</ul>
+
+</div>
+        </tr>
+      
+        <li>
+          <span class="name">:guess</span>
+          <span class="type">(<tt>Boolean</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>true</tt>
+            
+          </span>
+          &mdash; <div class='inline'><ul>
+<li>By default, the parser will guess a single point in time for the
+given date or time. If you'd rather have the entire time span
+returned, set <code>:guess</code> to <code>false</code> and a <span class='object_link'><a href="Chronic/Span.html" title="Chronic::Span (class)">Span</a></span> will
+be returned</li>
+</ul>
+
+</div>
+        </tr>
+      
+        <li>
+          <span class="name">:ambiguous_time_range</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>6</tt>
+            
+          </span>
+          &mdash; <div class='inline'><ul>
+<li>If an Integer is given, ambiguous times (like 5:00) will be
+assumed to be within the range of that time in the AM to that time
+in the PM. For example, if you set it to <code>7</code>, then the parser
+will look for the time between 7am and 7pm. In the case of 5:00, it
+would assume that means 5:00pm. If <code>:none</code> is given, no
+assumption will be made, and the first matching instance of that
+time will be used</li>
+</ul>
+
+</div>
+        </tr>
+      
+        <li>
+          <span class="name">:endian_precedence</span>
+          <span class="type">(<tt>Array</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>[:middle</tt>, <tt>:little]</tt>
+            
+          </span>
+          &mdash; <div class='inline'><ul>
+<li>By default, Chronic will parse "03/04/2011" as the fourth day
+of the third month. Alternatively you can tell Chronic to parse
+this as the third day of the fourth month by altering the
+<code>:endian_precedence</code> to <code>[:little, :middle]</code></li>
+</ul>
+
+</div>
+        </tr>
+      
+        <li>
+          <span class="name">:ambiguous_year_future_bias</span>
+          <span class="type">(<tt>Integer</tt>)</span>
+          <span class="default">
+            
+              &mdash; default:
+              <tt>50</tt>
+            
+          </span>
+          &mdash; <div class='inline'><ul>
+<li>When parsing two digit years (ie 79) unlike Rubys Time class,
+Chronic will attempt to assume the full year using this figure.
+Chronic will look x amount of years into the future and past. If
+the two digit year is <code>now + x years</code> it's assumed to be the
+future, <code>now - x years</code> is assumed to be the past</li>
+</ul>
+
+</div>
+        </tr>
+      
+    </ul>
+  
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Time.html" title="Time (class)">Time</a></span></tt>, <tt><span class='object_link'><a href="Chronic/Span.html" title="Chronic::Span (class)">Chronic::Span</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/chronic.rb', line 61</span>
+
+<span class='kw'>def</span> <span class='id parse'>parse</span><span class='lparen'>(</span><span class='id text'>text</span><span class='comma'>,</span> <span class='id opts'>opts</span><span class='op'>=</span><span class='lbrace'>{</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+  <span class='id options'>options</span> <span class='op'>=</span> <span class='const'>DEFAULT_OPTIONS</span><span class='period'>.</span><span class='id merge'>merge</span> <span class='id opts'>opts</span>
+
+  <span class='comment'># ensure the specified options are valid
+</span>  <span class='lparen'>(</span><span class='id opts'>opts</span><span class='period'>.</span><span class='id keys'>keys</span> <span class='op'>-</span> <span class='const'>DEFAULT_OPTIONS</span><span class='period'>.</span><span class='id keys'>keys</span><span class='rparen'>)</span><span class='period'>.</span><span class='id each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id key'>key</span><span class='op'>|</span>
+    <span class='id raise'>raise</span> <span class='const'>InvalidArgumentException</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='embexpr_beg'>#{</span><span class='id key'>key</span><span class='rbrace'>}</span><span class='tstring_content'> is not a valid option key.</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>unless</span> <span class='lbracket'>[</span><span class='symbol'>:past</span><span class='comma'>,</span> <span class='symbol'>:future</span><span class='comma'>,</span> <span class='symbol'>:none</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id include?'>include?</span><span class='lparen'>(</span><span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:context</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+    <span class='id raise'>raise</span> <span class='const'>InvalidArgumentException</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invalid context, :past/:future only</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:text</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id text'>text</span>
+  <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:now</span><span class='rbracket'>]</span> <span class='op'>||=</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id time_class'>time_class</span><span class='period'>.</span><span class='id now'>now</span>
+  <span class='const'>Chronic</span><span class='period'>.</span><span class='id now'>now</span> <span class='op'>=</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:now</span><span class='rbracket'>]</span>
+
+  <span class='comment'># tokenize words
+</span>  <span class='id tokens'>tokens</span> <span class='op'>=</span> <span class='id tokenize'>tokenize</span><span class='lparen'>(</span><span class='id text'>text</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id debug'>debug</span>
+    <span class='id puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>+</span><span class='embexpr_beg'>#{</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-</span><span class='tstring_end'>'</span></span> <span class='op'>*</span> <span class='int'>51</span><span class='rbrace'>}</span><span class='tstring_content'>\n| </span><span class='embexpr_beg'>#{</span><span class='id tokens'>tokens</span><span class='rbrace'>}</span><span class='tstring_content'>\n+</span><span class='embexpr_beg'>#{</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>-</span><span class='tstring_end'>'</span></span> <span class='op'>*</span> <span class='int'>51</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span>
+  <span class='kw'>end</span>
+
+  <span class='id span'>span</span> <span class='op'>=</span> <span class='id tokens_to_span'>tokens_to_span</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:guess</span><span class='rbracket'>]</span>
+    <span class='id guess'>guess</span> <span class='id span'>span</span>
+  <span class='kw'>else</span>
+    <span class='id span'>span</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="pre_normalize-class_method">
+  
+    + (<tt>String</tt>) <strong>pre_normalize</strong>(text) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Clean up the specified text ready for parsing</p>
+
+<p>Clean up the string by stripping unwanted characters, converting
+idioms to their canonical form, converting number words to numbers
+(three => 3), and converting ordinal words to numeric
+ordinals (third => 3rd)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+  <div class="examples">
+    <h3>Examples:</h3>
+    
+      <h4><div class='inline'>
+</div></h4>
+      <pre class="example code"><span class='const'>Chronic</span><span class='period'>.</span><span class='id pre_normalize'>pre_normalize</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>first day in May</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'>#=&gt; &quot;1st day in may&quot;
+</span>
+<span class='const'>Chronic</span><span class='period'>.</span><span class='id pre_normalize'>pre_normalize</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tomorrow after noon</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'>#=&gt; &quot;next day future 12:00&quot;
+</span>
+<span class='const'>Chronic</span><span class='period'>.</span><span class='id pre_normalize'>pre_normalize</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>one hundred and thirty six days from now</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'>#=&gt; &quot;136 days future this second&quot;</span></pre>
+    
+  </div>
+<h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>text</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>The string to normalize</p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A new string ready for Chronic to parse</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/chronic.rb', line 112</span>
+
+<span class='kw'>def</span> <span class='id pre_normalize'>pre_normalize</span><span class='lparen'>(</span><span class='id text'>text</span><span class='rparen'>)</span>
+  <span class='id text'>text</span> <span class='op'>=</span> <span class='id text'>text</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id downcase'>downcase</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>['&quot;\.,]</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\bsecond (of|day|month|hour|minute|second)\b</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>2nd \1</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span> <span class='op'>=</span> <span class='id numericize_numbers'>numericize_numbers</span><span class='lparen'>(</span><span class='id text'>text</span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'> \-(\d{4})\b</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'> tzminus\1</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>([\/\-\,\@])</span><span class='regexp_end'>/</span></span><span class='rparen'>)</span> <span class='lbrace'>{</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'> </span><span class='tstring_end'>'</span></span> <span class='op'>+</span> <span class='backref'>$1</span> <span class='op'>+</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'> </span><span class='tstring_end'>'</span></span> <span class='rbrace'>}</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\b0(\d+:\d+\s*pm?\b)</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>\1</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\btoday\b</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>this day</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\btomm?orr?ow\b</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>next day</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\byesterday\b</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>last day</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\bnoon\b</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>12:00</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\bmidnight\b</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>24:00</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\bbefore now\b</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>past</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\bnow\b</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>this second</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\b(ago|before)\b</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>past</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\bthis past\b</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>last</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\bthis last\b</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>last</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\b(?:in|during) the (morning)\b</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>\1</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\b(?:in the|during the|at) (afternoon|evening|night)\b</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>\1</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\btonight\b</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>this night</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\b\d+:?\d*[ap]\b</span><span class='regexp_end'>/</span></span><span class='comma'>,</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>\0m</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>(\d)([ap]m|oclock)\b</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>\1 \2</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span><span class='period'>.</span><span class='id gsub!'>gsub!</span><span class='lparen'>(</span><span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>\b(hence|after|from)\b</span><span class='regexp_end'>/</span></span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>future</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='id text'>text</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Fri Jun 10 09:39:38 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.1 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

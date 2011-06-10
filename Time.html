@@ -1,0 +1,323 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Time
+  
+    &mdash; Chronic - Natural language date/time parsing
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html">Index (T)</a> &raquo; 
+    
+    
+    <span class="title">Time</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: Time
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName">Object</span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next">Time</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/chronic.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#construct-class_method" title="construct (class method)">+ (Object) <strong>construct</strong>(year, month = 1, day = 1, hour = 0, minute = 0, second = 0) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_minidate-instance_method" title="#to_minidate (instance method)">- (Object) <strong>to_minidate</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="construct-class_method">
+  
+    + (<tt>Object</tt>) <strong>construct</strong>(year, month = 1, day = 1, hour = 0, minute = 0, second = 0) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic.rb', line 100</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id construct'>construct</span><span class='lparen'>(</span><span class='id year'>year</span><span class='comma'>,</span> <span class='id month'>month</span> <span class='op'>=</span> <span class='int'>1</span><span class='comma'>,</span> <span class='id day'>day</span> <span class='op'>=</span> <span class='int'>1</span><span class='comma'>,</span> <span class='id hour'>hour</span> <span class='op'>=</span> <span class='int'>0</span><span class='comma'>,</span> <span class='id minute'>minute</span> <span class='op'>=</span> <span class='int'>0</span><span class='comma'>,</span> <span class='id second'>second</span> <span class='op'>=</span> <span class='int'>0</span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id second'>second</span> <span class='op'>&gt;=</span> <span class='int'>60</span>
+    <span class='id minute'>minute</span> <span class='op'>+=</span> <span class='id second'>second</span> <span class='op'>/</span> <span class='int'>60</span>
+    <span class='id second'>second</span> <span class='op'>=</span> <span class='id second'>second</span> <span class='op'>%</span> <span class='int'>60</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id minute'>minute</span> <span class='op'>&gt;=</span> <span class='int'>60</span>
+    <span class='id hour'>hour</span> <span class='op'>+=</span> <span class='id minute'>minute</span> <span class='op'>/</span> <span class='int'>60</span>
+    <span class='id minute'>minute</span> <span class='op'>=</span> <span class='id minute'>minute</span> <span class='op'>%</span> <span class='int'>60</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id hour'>hour</span> <span class='op'>&gt;=</span> <span class='int'>24</span>
+    <span class='id day'>day</span> <span class='op'>+=</span> <span class='id hour'>hour</span> <span class='op'>/</span> <span class='int'>24</span>
+    <span class='id hour'>hour</span> <span class='op'>=</span> <span class='id hour'>hour</span> <span class='op'>%</span> <span class='int'>24</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># determine if there is a day overflow. this is complicated by our crappy calendar
+</span>  <span class='comment'># system (non-constant number of days per month)
+</span>  <span class='id day'>day</span> <span class='op'>&lt;=</span> <span class='int'>56</span> <span class='op'>||</span> <span class='id raise'>raise</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>day must be no more than 56 (makes month resolution easier)</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>if</span> <span class='id day'>day</span> <span class='op'>&gt;</span> <span class='int'>28</span>
+    <span class='comment'># no month ever has fewer than 28 days, so only do this if necessary
+</span>    <span class='id leap_year'>leap_year</span> <span class='op'>=</span> <span class='lparen'>(</span><span class='id year'>year</span> <span class='op'>%</span> <span class='int'>4</span> <span class='op'>==</span> <span class='int'>0</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='op'>!</span><span class='lparen'>(</span><span class='id year'>year</span> <span class='op'>%</span> <span class='int'>100</span> <span class='op'>==</span> <span class='int'>0</span><span class='rparen'>)</span>
+    <span class='id leap_year_month_days'>leap_year_month_days</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>31</span><span class='comma'>,</span> <span class='int'>29</span><span class='comma'>,</span> <span class='int'>31</span><span class='comma'>,</span> <span class='int'>30</span><span class='comma'>,</span> <span class='int'>31</span><span class='comma'>,</span> <span class='int'>30</span><span class='comma'>,</span> <span class='int'>31</span><span class='comma'>,</span> <span class='int'>31</span><span class='comma'>,</span> <span class='int'>30</span><span class='comma'>,</span> <span class='int'>31</span><span class='comma'>,</span> <span class='int'>30</span><span class='comma'>,</span> <span class='int'>31</span><span class='rbracket'>]</span>
+    <span class='id common_year_month_days'>common_year_month_days</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='int'>31</span><span class='comma'>,</span> <span class='int'>28</span><span class='comma'>,</span> <span class='int'>31</span><span class='comma'>,</span> <span class='int'>30</span><span class='comma'>,</span> <span class='int'>31</span><span class='comma'>,</span> <span class='int'>30</span><span class='comma'>,</span> <span class='int'>31</span><span class='comma'>,</span> <span class='int'>31</span><span class='comma'>,</span> <span class='int'>30</span><span class='comma'>,</span> <span class='int'>31</span><span class='comma'>,</span> <span class='int'>30</span><span class='comma'>,</span> <span class='int'>31</span><span class='rbracket'>]</span>
+    <span class='id days_this_month'>days_this_month</span> <span class='op'>=</span> <span class='id leap_year'>leap_year</span> <span class='op'>?</span> <span class='id leap_year_month_days'>leap_year_month_days</span><span class='lbracket'>[</span><span class='id month'>month</span> <span class='op'>-</span> <span class='int'>1</span><span class='rbracket'>]</span> <span class='op'>:</span> <span class='id common_year_month_days'>common_year_month_days</span><span class='lbracket'>[</span><span class='id month'>month</span> <span class='op'>-</span> <span class='int'>1</span><span class='rbracket'>]</span>
+    <span class='kw'>if</span> <span class='id day'>day</span> <span class='op'>&gt;</span> <span class='id days_this_month'>days_this_month</span>
+      <span class='id month'>month</span> <span class='op'>+=</span> <span class='id day'>day</span> <span class='op'>/</span> <span class='id days_this_month'>days_this_month</span>
+      <span class='id day'>day</span> <span class='op'>=</span> <span class='id day'>day</span> <span class='op'>%</span> <span class='id days_this_month'>days_this_month</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='id month'>month</span> <span class='op'>&gt;</span> <span class='int'>12</span>
+    <span class='kw'>if</span> <span class='id month'>month</span> <span class='op'>%</span> <span class='int'>12</span> <span class='op'>==</span> <span class='int'>0</span>
+      <span class='id year'>year</span> <span class='op'>+=</span> <span class='lparen'>(</span><span class='id month'>month</span> <span class='op'>-</span> <span class='int'>12</span><span class='rparen'>)</span> <span class='op'>/</span> <span class='int'>12</span>
+      <span class='id month'>month</span> <span class='op'>=</span> <span class='int'>12</span>
+    <span class='kw'>else</span>
+      <span class='id year'>year</span> <span class='op'>+=</span> <span class='id month'>month</span> <span class='op'>/</span> <span class='int'>12</span>
+      <span class='id month'>month</span> <span class='op'>=</span> <span class='id month'>month</span> <span class='op'>%</span> <span class='int'>12</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='const'>Chronic</span><span class='period'>.</span><span class='id time_class'>time_class</span><span class='period'>.</span><span class='id local'>local</span><span class='lparen'>(</span><span class='id year'>year</span><span class='comma'>,</span> <span class='id month'>month</span><span class='comma'>,</span> <span class='id day'>day</span><span class='comma'>,</span> <span class='id hour'>hour</span><span class='comma'>,</span> <span class='id minute'>minute</span><span class='comma'>,</span> <span class='id second'>second</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="to_minidate-instance_method">
+  
+    - (<tt>Object</tt>) <strong>to_minidate</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+144
+145
+146</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic.rb', line 144</span>
+
+<span class='kw'>def</span> <span class='id to_minidate'>to_minidate</span>
+  <span class='const'>Chronic</span><span class='op'>::</span><span class='const'>MiniDate</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='kw'>self</span><span class='period'>.</span><span class='id month'>month</span><span class='comma'>,</span> <span class='kw'>self</span><span class='period'>.</span><span class='id day'>day</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Fri Jun 10 09:39:38 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.1 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

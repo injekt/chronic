@@ -1,0 +1,2183 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Module: Chronic::Handlers
+  
+    &mdash; Chronic - Natural language date/time parsing
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (H)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../Chronic.html" title="Chronic (module)">Chronic</a></span></span>
+     &raquo; 
+    <span class="title">Handlers</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Module: Chronic::Handlers
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r1 last">Defined in:</dt>
+    <dd class="r1 last">lib/chronic/handlers.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+
+
+
+
+
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#day_or_time-instance_method" title="#day_or_time (instance method)">- (Object) <strong>day_or_time</strong>(day_start, time_tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>support methods.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#dealias_and_disambiguate_times-instance_method" title="#dealias_and_disambiguate_times (instance method)">- (Object) <strong>dealias_and_disambiguate_times</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>:nodoc:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#find_within-instance_method" title="#find_within (instance method)">- (Object) <strong>find_within</strong>(tags, span, pointer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Recursively finds repeaters within other repeaters.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_anchor-instance_method" title="#get_anchor (instance method)">- (Object) <strong>get_anchor</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>:nodoc:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#get_repeaters-instance_method" title="#get_repeaters (instance method)">- (Object) <strong>get_repeaters</strong>(tokens) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>:nodoc:.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_m_d-instance_method" title="#handle_m_d (instance method)">- (Object) <strong>handle_m_d</strong>(month, day, time_tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle month/day.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_o_r_g_r-instance_method" title="#handle_o_r_g_r (instance method)">- (Object) <strong>handle_o_r_g_r</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle ordinal/repeater/grabber/repeater.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_o_r_s_r-instance_method" title="#handle_o_r_s_r (instance method)">- (Object) <strong>handle_o_r_s_r</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle ordinal/repeater/separator/repeater.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_orr-instance_method" title="#handle_orr (instance method)">- (Object) <strong>handle_orr</strong>(tokens, outer_span, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle oridinal repeaters.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_p_s_r-instance_method" title="#handle_p_s_r (instance method)">- (Object) <strong>handle_p_s_r</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle pointer/scalar/repeater.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_r-instance_method" title="#handle_r (instance method)">- (Object) <strong>handle_r</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle repeaters.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_r_g_r-instance_method" title="#handle_r_g_r (instance method)">- (Object) <strong>handle_r_g_r</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle repeater/grabber/repeater.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_rdn_rmn_sd_t_tz_sy-instance_method" title="#handle_rdn_rmn_sd_t_tz_sy (instance method)">- (Object) <strong>handle_rdn_rmn_sd_t_tz_sy</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle generic timestamp.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_rmn_od-instance_method" title="#handle_rmn_od (instance method)">- (Object) <strong>handle_rmn_od</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle repeater-month-name/ordinal-day.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_rmn_od_on-instance_method" title="#handle_rmn_od_on (instance method)">- (Object) <strong>handle_rmn_od_on</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle repeater-month-name/ordinal-day with separator-on.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_rmn_od_sy-instance_method" title="#handle_rmn_od_sy (instance method)">- (Object) <strong>handle_rmn_od_sy</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle repeater-month-name/ordinal-day/scalar-year.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_rmn_sd-instance_method" title="#handle_rmn_sd (instance method)">- (Object) <strong>handle_rmn_sd</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle repeater-month-name/scalar-day.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_rmn_sd_on-instance_method" title="#handle_rmn_sd_on (instance method)">- (Object) <strong>handle_rmn_sd_on</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle repeater-month-name/scalar-day with separator-on.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_rmn_sd_sy-instance_method" title="#handle_rmn_sd_sy (instance method)">- (Object) <strong>handle_rmn_sd_sy</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle repeater-month-name/scalar-day/scalar-year.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_rmn_sy-instance_method" title="#handle_rmn_sy (instance method)">- (Object) <strong>handle_rmn_sy</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle repeater-month-name/scalar-year.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_s_r_p-instance_method" title="#handle_s_r_p (instance method)">- (Object) <strong>handle_s_r_p</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle scalar/repeater/pointer.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_s_r_p_a-instance_method" title="#handle_s_r_p_a (instance method)">- (Object) <strong>handle_s_r_p_a</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle scalar/repeater/pointer/anchor.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_sd_rmn_sy-instance_method" title="#handle_sd_rmn_sy (instance method)">- (Object) <strong>handle_sd_rmn_sy</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle scalar-day/repeater-month-name/scalar-year.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_sd_sm_sy-instance_method" title="#handle_sd_sm_sy (instance method)">- (Object) <strong>handle_sd_sm_sy</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle scalar-day/scalar-month/scalar-year (endian little).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_sm_sd_sy-instance_method" title="#handle_sm_sd_sy (instance method)">- (Object) <strong>handle_sm_sd_sy</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle scalar-month/scalar-day/scalar-year (endian middle).</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_sm_sy-instance_method" title="#handle_sm_sy (instance method)">- (Object) <strong>handle_sm_sy</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle scalar-month/scalar-year.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_srp-instance_method" title="#handle_srp (instance method)">- (Object) <strong>handle_srp</strong>(tokens, span, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle scalar/repeater/pointer helper.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#handle_sy_sm_sd-instance_method" title="#handle_sy_sm_sd (instance method)">- (Object) <strong>handle_sy_sm_sd</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Handle scalar-year/scalar-month/scalar-day.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="day_or_time-instance_method">
+  
+    - (<tt>Object</tt>) <strong>day_or_time</strong>(day_start, time_tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>support methods</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 235</span>
+
+<span class='kw'>def</span> <span class='id day_or_time'>day_or_time</span><span class='lparen'>(</span><span class='id day_start'>day_start</span><span class='comma'>,</span> <span class='id time_tokens'>time_tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='id outer_span'>outer_span</span> <span class='op'>=</span> <span class='const'>Span</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id day_start'>day_start</span><span class='comma'>,</span> <span class='id day_start'>day_start</span> <span class='op'>+</span> <span class='lparen'>(</span><span class='int'>24</span> <span class='op'>*</span> <span class='int'>60</span> <span class='op'>*</span> <span class='int'>60</span><span class='rparen'>)</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='op'>!</span><span class='id time_tokens'>time_tokens</span><span class='period'>.</span><span class='id empty?'>empty?</span>
+    <span class='const'>Chronic</span><span class='period'>.</span><span class='id now'>now</span> <span class='op'>=</span> <span class='id outer_span'>outer_span</span><span class='period'>.</span><span class='id begin'>begin</span>
+    <span class='id get_anchor'>get_anchor</span><span class='lparen'>(</span><span class='id dealias_and_disambiguate_times'>dealias_and_disambiguate_times</span><span class='lparen'>(</span><span class='id time_tokens'>time_tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id outer_span'>outer_span</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="dealias_and_disambiguate_times-instance_method">
+  
+    - (<tt>Object</tt>) <strong>dealias_and_disambiguate_times</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>:nodoc:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349
+350
+351
+352
+353
+354
+355
+356
+357</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 305</span>
+
+<span class='kw'>def</span> <span class='id dealias_and_disambiguate_times'>dealias_and_disambiguate_times</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='comment'># handle aliases of am/pm
+</span>  <span class='comment'># 5:00 in the morning -&gt; 5:00 am
+</span>  <span class='comment'># 7:00 in the evening -&gt; 7:00 pm
+</span>
+  <span class='id day_portion_index'>day_portion_index</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='id tokens'>tokens</span><span class='period'>.</span><span class='id each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id t'>t</span><span class='comma'>,</span> <span class='id i'>i</span><span class='op'>|</span>
+    <span class='kw'>if</span> <span class='id t'>t</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>RepeaterDayPortion</span><span class='rparen'>)</span>
+      <span class='id day_portion_index'>day_portion_index</span> <span class='op'>=</span> <span class='id i'>i</span>
+      <span class='kw'>break</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='id time_index'>time_index</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='id tokens'>tokens</span><span class='period'>.</span><span class='id each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id t'>t</span><span class='comma'>,</span> <span class='id i'>i</span><span class='op'>|</span>
+    <span class='kw'>if</span> <span class='id t'>t</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>RepeaterTime</span><span class='rparen'>)</span>
+      <span class='id time_index'>time_index</span> <span class='op'>=</span> <span class='id i'>i</span>
+      <span class='kw'>break</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>if</span> <span class='lparen'>(</span><span class='id day_portion_index'>day_portion_index</span> <span class='op'>&amp;&amp;</span> <span class='id time_index'>time_index</span><span class='rparen'>)</span>
+    <span class='id t1'>t1</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='id day_portion_index'>day_portion_index</span><span class='rbracket'>]</span>
+    <span class='id t1tag'>t1tag</span> <span class='op'>=</span> <span class='id t1'>t1</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>RepeaterDayPortion</span><span class='rparen'>)</span>
+
+    <span class='kw'>if</span> <span class='lbracket'>[</span><span class='symbol'>:morning</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id include?'>include?</span><span class='lparen'>(</span><span class='id t1tag'>t1tag</span><span class='period'>.</span><span class='id type'>type</span><span class='rparen'>)</span>
+      <span class='id puts'>puts</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>--morning-&gt;am</span><span class='tstring_end'>'</span></span> <span class='kw'>if</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id debug'>debug</span>
+      <span class='id t1'>t1</span><span class='period'>.</span><span class='id untag'>untag</span><span class='lparen'>(</span><span class='const'>RepeaterDayPortion</span><span class='rparen'>)</span>
+      <span class='id t1'>t1</span><span class='period'>.</span><span class='id tag'>tag</span><span class='lparen'>(</span><span class='const'>RepeaterDayPortion</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='symbol'>:am</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='kw'>elsif</span> <span class='lbracket'>[</span><span class='symbol'>:afternoon</span><span class='comma'>,</span> <span class='symbol'>:evening</span><span class='comma'>,</span> <span class='symbol'>:night</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id include?'>include?</span><span class='lparen'>(</span><span class='id t1tag'>t1tag</span><span class='period'>.</span><span class='id type'>type</span><span class='rparen'>)</span>
+      <span class='id puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--</span><span class='embexpr_beg'>#{</span><span class='id t1tag'>t1tag</span><span class='period'>.</span><span class='id type'>type</span><span class='rbrace'>}</span><span class='tstring_content'>-&gt;pm</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id debug'>debug</span>
+      <span class='id t1'>t1</span><span class='period'>.</span><span class='id untag'>untag</span><span class='lparen'>(</span><span class='const'>RepeaterDayPortion</span><span class='rparen'>)</span>
+      <span class='id t1'>t1</span><span class='period'>.</span><span class='id tag'>tag</span><span class='lparen'>(</span><span class='const'>RepeaterDayPortion</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='symbol'>:pm</span><span class='rparen'>)</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+
+  <span class='comment'># handle ambiguous times if :ambiguous_time_range is specified
+</span>  <span class='kw'>if</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:ambiguous_time_range</span><span class='rbracket'>]</span> <span class='op'>!=</span> <span class='symbol'>:none</span>
+    <span class='id ttokens'>ttokens</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+    <span class='id tokens'>tokens</span><span class='period'>.</span><span class='id each_with_index'>each_with_index</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id t0'>t0</span><span class='comma'>,</span> <span class='id i'>i</span><span class='op'>|</span>
+      <span class='id ttokens'>ttokens</span> <span class='op'>&lt;&lt;</span> <span class='id t0'>t0</span>
+      <span class='id t1'>t1</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='id i'>i</span> <span class='op'>+</span> <span class='int'>1</span><span class='rbracket'>]</span>
+      <span class='kw'>if</span> <span class='id t0'>t0</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>RepeaterTime</span><span class='rparen'>)</span> <span class='op'>&amp;&amp;</span> <span class='id t0'>t0</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>RepeaterTime</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span><span class='period'>.</span><span class='id ambiguous?'>ambiguous?</span> <span class='op'>&amp;&amp;</span> <span class='lparen'>(</span><span class='op'>!</span><span class='id t1'>t1</span> <span class='op'>||</span> <span class='op'>!</span><span class='id t1'>t1</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>RepeaterDayPortion</span><span class='rparen'>)</span><span class='rparen'>)</span>
+        <span class='id distoken'>distoken</span> <span class='op'>=</span> <span class='const'>Token</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>disambiguator</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+        <span class='id distoken'>distoken</span><span class='period'>.</span><span class='id tag'>tag</span><span class='lparen'>(</span><span class='const'>RepeaterDayPortion</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:ambiguous_time_range</span><span class='rbracket'>]</span><span class='rparen'>)</span><span class='rparen'>)</span>
+        <span class='id ttokens'>ttokens</span> <span class='op'>&lt;&lt;</span> <span class='id distoken'>distoken</span>
+      <span class='kw'>end</span>
+    <span class='kw'>end</span>
+    <span class='id tokens'>tokens</span> <span class='op'>=</span> <span class='id ttokens'>ttokens</span>
+  <span class='kw'>end</span>
+
+  <span class='id tokens'>tokens</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="find_within-instance_method">
+  
+    - (<tt>Object</tt>) <strong>find_within</strong>(tags, span, pointer) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Recursively finds repeaters within other repeaters.
+Returns a Span representing the innermost time span
+or nil if no repeater union could be found</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 292</span>
+
+<span class='kw'>def</span> <span class='id find_within'>find_within</span><span class='lparen'>(</span><span class='id tags'>tags</span><span class='comma'>,</span> <span class='id span'>span</span><span class='comma'>,</span> <span class='id pointer'>pointer</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--</span><span class='embexpr_beg'>#{</span><span class='id span'>span</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id debug'>debug</span>
+  <span class='kw'>return</span> <span class='id span'>span</span> <span class='kw'>if</span> <span class='id tags'>tags</span><span class='period'>.</span><span class='id empty?'>empty?</span>
+
+  <span class='id head'>head</span><span class='comma'>,</span> <span class='op'>*</span><span class='id rest'>rest</span> <span class='op'>=</span> <span class='id tags'>tags</span>
+  <span class='id head'>head</span><span class='period'>.</span><span class='id start'>start</span> <span class='op'>=</span> <span class='id pointer'>pointer</span> <span class='op'>==</span> <span class='symbol'>:future</span> <span class='op'>?</span> <span class='id span'>span</span><span class='period'>.</span><span class='id begin'>begin</span> <span class='op'>:</span> <span class='id span'>span</span><span class='period'>.</span><span class='id end'>end</span>
+  <span class='id h'>h</span> <span class='op'>=</span> <span class='id head'>head</span><span class='period'>.</span><span class='id this'>this</span><span class='lparen'>(</span><span class='symbol'>:none</span><span class='rparen'>)</span>
+
+  <span class='kw'>if</span> <span class='id span'>span</span><span class='period'>.</span><span class='id cover?'>cover?</span><span class='lparen'>(</span><span class='id h'>h</span><span class='period'>.</span><span class='id begin'>begin</span><span class='rparen'>)</span> <span class='op'>||</span> <span class='id span'>span</span><span class='period'>.</span><span class='id cover?'>cover?</span><span class='lparen'>(</span><span class='id h'>h</span><span class='period'>.</span><span class='id end'>end</span><span class='rparen'>)</span>
+    <span class='id find_within'>find_within</span><span class='lparen'>(</span><span class='id rest'>rest</span><span class='comma'>,</span> <span class='id h'>h</span><span class='comma'>,</span> <span class='id pointer'>pointer</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="get_anchor-instance_method">
+  
+    - (<tt>Object</tt>) <strong>get_anchor</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>:nodoc:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 246</span>
+
+<span class='kw'>def</span> <span class='id get_anchor'>get_anchor</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id grabber'>grabber</span> <span class='op'>=</span> <span class='const'>Grabber</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='symbol'>:this</span><span class='rparen'>)</span>
+  <span class='id pointer'>pointer</span> <span class='op'>=</span> <span class='symbol'>:future</span>
+
+  <span class='id repeaters'>repeaters</span> <span class='op'>=</span> <span class='id get_repeaters'>get_repeaters</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='rparen'>)</span>
+  <span class='id repeaters'>repeaters</span><span class='period'>.</span><span class='id size'>size</span><span class='period'>.</span><span class='id times'>times</span> <span class='lbrace'>{</span> <span class='id tokens'>tokens</span><span class='period'>.</span><span class='id pop'>pop</span> <span class='rbrace'>}</span>
+
+  <span class='kw'>if</span> <span class='id tokens'>tokens</span><span class='period'>.</span><span class='id first'>first</span> <span class='op'>&amp;&amp;</span> <span class='id tokens'>tokens</span><span class='period'>.</span><span class='id first'>first</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>Grabber</span><span class='rparen'>)</span>
+    <span class='id grabber'>grabber</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='period'>.</span><span class='id first'>first</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>Grabber</span><span class='rparen'>)</span>
+    <span class='id tokens'>tokens</span><span class='period'>.</span><span class='id pop'>pop</span>
+  <span class='kw'>end</span>
+
+  <span class='id head'>head</span> <span class='op'>=</span> <span class='id repeaters'>repeaters</span><span class='period'>.</span><span class='id shift'>shift</span>
+  <span class='id head'>head</span><span class='period'>.</span><span class='id start'>start</span> <span class='op'>=</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id now'>now</span>
+
+  <span class='kw'>case</span> <span class='id grabber'>grabber</span><span class='period'>.</span><span class='id type'>type</span>
+    <span class='kw'>when</span> <span class='symbol'>:last</span>
+      <span class='id outer_span'>outer_span</span> <span class='op'>=</span> <span class='id head'>head</span><span class='period'>.</span><span class='id next'>next</span><span class='lparen'>(</span><span class='symbol'>:past</span><span class='rparen'>)</span>
+    <span class='kw'>when</span> <span class='symbol'>:this</span>
+      <span class='kw'>if</span> <span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:context</span><span class='rbracket'>]</span> <span class='op'>!=</span> <span class='symbol'>:past</span> <span class='kw'>and</span> <span class='id repeaters'>repeaters</span><span class='period'>.</span><span class='id size'>size</span> <span class='op'>&gt;</span> <span class='int'>0</span>
+        <span class='id outer_span'>outer_span</span> <span class='op'>=</span> <span class='id head'>head</span><span class='period'>.</span><span class='id this'>this</span><span class='lparen'>(</span><span class='symbol'>:none</span><span class='rparen'>)</span>
+      <span class='kw'>else</span>
+        <span class='id outer_span'>outer_span</span> <span class='op'>=</span> <span class='id head'>head</span><span class='period'>.</span><span class='id this'>this</span><span class='lparen'>(</span><span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:context</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+      <span class='kw'>end</span>
+    <span class='kw'>when</span> <span class='symbol'>:next</span>
+      <span class='id outer_span'>outer_span</span> <span class='op'>=</span> <span class='id head'>head</span><span class='period'>.</span><span class='id next'>next</span><span class='lparen'>(</span><span class='symbol'>:future</span><span class='rparen'>)</span>
+    <span class='kw'>else</span> <span class='id raise'>raise</span><span class='lparen'>(</span><span class='const'>ChronicPain</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Invalid grabber</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+
+  <span class='id puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>--</span><span class='embexpr_beg'>#{</span><span class='id outer_span'>outer_span</span><span class='rbrace'>}</span><span class='tstring_end'>&quot;</span></span> <span class='kw'>if</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id debug'>debug</span>
+  <span class='id find_within'>find_within</span><span class='lparen'>(</span><span class='id repeaters'>repeaters</span><span class='comma'>,</span> <span class='id outer_span'>outer_span</span><span class='comma'>,</span> <span class='id pointer'>pointer</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="get_repeaters-instance_method">
+  
+    - (<tt>Object</tt>) <strong>get_repeaters</strong>(tokens) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>:nodoc:</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+279
+280
+281
+282
+283
+284
+285
+286
+287</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 279</span>
+
+<span class='kw'>def</span> <span class='id get_repeaters'>get_repeaters</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id repeaters'>repeaters</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='rbracket'>]</span>
+  <span class='id tokens'>tokens</span><span class='period'>.</span><span class='id each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id token'>token</span><span class='op'>|</span>
+    <span class='kw'>if</span> <span class='id t'>t</span> <span class='op'>=</span> <span class='id token'>token</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>Repeater</span><span class='rparen'>)</span>
+      <span class='id repeaters'>repeaters</span> <span class='op'>&lt;&lt;</span> <span class='id t'>t</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id repeaters'>repeaters</span><span class='period'>.</span><span class='id sort'>sort</span><span class='period'>.</span><span class='id reverse'>reverse</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_m_d-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_m_d</strong>(month, day, time_tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle month/day</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+6
+7
+8
+9
+10
+11
+12
+13</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 6</span>
+
+<span class='kw'>def</span> <span class='id handle_m_d'>handle_m_d</span><span class='lparen'>(</span><span class='id month'>month</span><span class='comma'>,</span> <span class='id day'>day</span><span class='comma'>,</span> <span class='id time_tokens'>time_tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id month'>month</span><span class='period'>.</span><span class='id start'>start</span> <span class='op'>=</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id now'>now</span>
+  <span class='id span'>span</span> <span class='op'>=</span> <span class='id month'>month</span><span class='period'>.</span><span class='id this'>this</span><span class='lparen'>(</span><span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:context</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+
+  <span class='id day_start'>day_start</span> <span class='op'>=</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id time_class'>time_class</span><span class='period'>.</span><span class='id local'>local</span><span class='lparen'>(</span><span class='id span'>span</span><span class='period'>.</span><span class='id begin'>begin</span><span class='period'>.</span><span class='id year'>year</span><span class='comma'>,</span> <span class='id span'>span</span><span class='period'>.</span><span class='id begin'>begin</span><span class='period'>.</span><span class='id month'>month</span><span class='comma'>,</span> <span class='id day'>day</span><span class='rparen'>)</span>
+
+  <span class='id day_or_time'>day_or_time</span><span class='lparen'>(</span><span class='id day_start'>day_start</span><span class='comma'>,</span> <span class='id time_tokens'>time_tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_o_r_g_r-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_o_r_g_r</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle ordinal/repeater/grabber/repeater</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+228
+229
+230
+231</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 228</span>
+
+<span class='kw'>def</span> <span class='id handle_o_r_g_r'>handle_o_r_g_r</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id outer_span'>outer_span</span> <span class='op'>=</span> <span class='id get_anchor'>get_anchor</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>2</span><span class='op'>..</span><span class='int'>3</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='id handle_orr'>handle_orr</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id outer_span'>outer_span</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_o_r_s_r-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_o_r_s_r</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle ordinal/repeater/separator/repeater</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+222
+223
+224
+225</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 222</span>
+
+<span class='kw'>def</span> <span class='id handle_o_r_s_r'>handle_o_r_s_r</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id outer_span'>outer_span</span> <span class='op'>=</span> <span class='id get_anchor'>get_anchor</span><span class='lparen'>(</span><span class='lbracket'>[</span><span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='id handle_orr'>handle_orr</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id outer_span'>outer_span</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_orr-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_orr</strong>(tokens, outer_span, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle oridinal repeaters</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 206</span>
+
+<span class='kw'>def</span> <span class='id handle_orr'>handle_orr</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id outer_span'>outer_span</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id repeater'>repeater</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>Repeater</span><span class='rparen'>)</span>
+  <span class='id repeater'>repeater</span><span class='period'>.</span><span class='id start'>start</span> <span class='op'>=</span> <span class='id outer_span'>outer_span</span><span class='period'>.</span><span class='id begin'>begin</span> <span class='op'>-</span> <span class='int'>1</span>
+  <span class='id ordinal'>ordinal</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>Ordinal</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span>
+  <span class='id span'>span</span> <span class='op'>=</span> <span class='kw'>nil</span>
+  <span class='id ordinal'>ordinal</span><span class='period'>.</span><span class='id times'>times</span> <span class='kw'>do</span>
+    <span class='id span'>span</span> <span class='op'>=</span> <span class='id repeater'>repeater</span><span class='period'>.</span><span class='id next'>next</span><span class='lparen'>(</span><span class='symbol'>:future</span><span class='rparen'>)</span>
+    <span class='kw'>if</span> <span class='id span'>span</span><span class='period'>.</span><span class='id begin'>begin</span> <span class='op'>&gt;</span> <span class='id outer_span'>outer_span</span><span class='period'>.</span><span class='id end'>end</span>
+      <span class='id span'>span</span> <span class='op'>=</span> <span class='kw'>nil</span>
+      <span class='kw'>break</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='id span'>span</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_p_s_r-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_p_s_r</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle pointer/scalar/repeater</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+192
+193
+194
+195</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 192</span>
+
+<span class='kw'>def</span> <span class='id handle_p_s_r'>handle_p_s_r</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id new_tokens'>new_tokens</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+  <span class='id handle_s_r_p'>handle_s_r_p</span><span class='lparen'>(</span><span class='id new_tokens'>new_tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_r-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_r</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle repeaters</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+161
+162
+163
+164</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 161</span>
+
+<span class='kw'>def</span> <span class='id handle_r'>handle_r</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id dd_tokens'>dd_tokens</span> <span class='op'>=</span> <span class='id dealias_and_disambiguate_times'>dealias_and_disambiguate_times</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='id get_anchor'>get_anchor</span><span class='lparen'>(</span><span class='id dd_tokens'>dd_tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_r_g_r-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_r_g_r</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle repeater/grabber/repeater</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+167
+168
+169
+170</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 167</span>
+
+<span class='kw'>def</span> <span class='id handle_r_g_r'>handle_r_g_r</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id new_tokens'>new_tokens</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+  <span class='id handle_r'>handle_r</span><span class='lparen'>(</span><span class='id new_tokens'>new_tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_rdn_rmn_sd_t_tz_sy-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_rdn_rmn_sd_t_tz_sy</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle generic timestamp</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+64
+65
+66
+67</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 64</span>
+
+<span class='kw'>def</span> <span class='id handle_rdn_rmn_sd_t_tz_sy'>handle_rdn_rmn_sd_t_tz_sy</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id t'>t</span> <span class='op'>=</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id time_class'>time_class</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='id options'>options</span><span class='lbracket'>[</span><span class='symbol'>:text</span><span class='rbracket'>]</span><span class='rparen'>)</span>
+  <span class='const'>Span</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id t'>t</span><span class='comma'>,</span> <span class='id t'>t</span> <span class='op'>+</span> <span class='int'>1</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_rmn_od-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_rmn_od</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle repeater-month-name/ordinal-day</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+30
+31
+32</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 30</span>
+
+<span class='kw'>def</span> <span class='id handle_rmn_od'>handle_rmn_od</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id handle_m_d'>handle_m_d</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>RepeaterMonthName</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>OrdinalDay</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>2</span><span class='op'>..</span><span class='id tokens'>tokens</span><span class='period'>.</span><span class='id size'>size</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_rmn_od_on-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_rmn_od_on</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle repeater-month-name/ordinal-day with separator-on</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35
+36
+37
+38
+39
+40
+41</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 35</span>
+
+<span class='kw'>def</span> <span class='id handle_rmn_od_on'>handle_rmn_od_on</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='kw'>if</span> <span class='id tokens'>tokens</span><span class='period'>.</span><span class='id size'>size</span> <span class='op'>&gt;</span> <span class='int'>3</span>
+    <span class='id handle_m_d'>handle_m_d</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>RepeaterMonthName</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>OrdinalDay</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id handle_m_d'>handle_m_d</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>RepeaterMonthName</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>OrdinalDay</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_rmn_od_sy-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_rmn_od_sy</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle repeater-month-name/ordinal-day/scalar-year</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 86</span>
+
+<span class='kw'>def</span> <span class='id handle_rmn_od_sy'>handle_rmn_od_sy</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id month'>month</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>RepeaterMonthName</span><span class='rparen'>)</span><span class='period'>.</span><span class='id index'>index</span>
+  <span class='id day'>day</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>OrdinalDay</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span>
+  <span class='id year'>year</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>ScalarYear</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span>
+
+  <span class='id time_tokens'>time_tokens</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='period'>.</span><span class='id last'>last</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='period'>.</span><span class='id size'>size</span> <span class='op'>-</span> <span class='int'>3</span><span class='rparen'>)</span>
+
+  <span class='kw'>begin</span>
+    <span class='id day_start'>day_start</span> <span class='op'>=</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id time_class'>time_class</span><span class='period'>.</span><span class='id local'>local</span><span class='lparen'>(</span><span class='id year'>year</span><span class='comma'>,</span> <span class='id month'>month</span><span class='comma'>,</span> <span class='id day'>day</span><span class='rparen'>)</span>
+    <span class='id day_or_time'>day_or_time</span><span class='lparen'>(</span><span class='id day_start'>day_start</span><span class='comma'>,</span> <span class='id time_tokens'>time_tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='kw'>rescue</span> <span class='const'>ArgumentError</span>
+    <span class='kw'>nil</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_rmn_sd-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_rmn_sd</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle repeater-month-name/scalar-day</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+16
+17
+18</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 16</span>
+
+<span class='kw'>def</span> <span class='id handle_rmn_sd'>handle_rmn_sd</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id handle_m_d'>handle_m_d</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>RepeaterMonthName</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>ScalarDay</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>2</span><span class='op'>..</span><span class='id tokens'>tokens</span><span class='period'>.</span><span class='id size'>size</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_rmn_sd_on-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_rmn_sd_on</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle repeater-month-name/scalar-day with separator-on</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+21
+22
+23
+24
+25
+26
+27</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 21</span>
+
+<span class='kw'>def</span> <span class='id handle_rmn_sd_on'>handle_rmn_sd_on</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='kw'>if</span> <span class='id tokens'>tokens</span><span class='period'>.</span><span class='id size'>size</span> <span class='op'>&gt;</span> <span class='int'>3</span>
+    <span class='id handle_m_d'>handle_m_d</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>RepeaterMonthName</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>3</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>ScalarDay</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='kw'>else</span>
+    <span class='id handle_m_d'>handle_m_d</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>RepeaterMonthName</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>ScalarDay</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='op'>..</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_rmn_sd_sy-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_rmn_sd_sy</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle repeater-month-name/scalar-day/scalar-year</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 70</span>
+
+<span class='kw'>def</span> <span class='id handle_rmn_sd_sy'>handle_rmn_sd_sy</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id month'>month</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>RepeaterMonthName</span><span class='rparen'>)</span><span class='period'>.</span><span class='id index'>index</span>
+  <span class='id day'>day</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>ScalarDay</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span>
+  <span class='id year'>year</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>ScalarYear</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span>
+
+  <span class='id time_tokens'>time_tokens</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='period'>.</span><span class='id last'>last</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='period'>.</span><span class='id size'>size</span> <span class='op'>-</span> <span class='int'>3</span><span class='rparen'>)</span>
+
+  <span class='kw'>begin</span>
+    <span class='id day_start'>day_start</span> <span class='op'>=</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id time_class'>time_class</span><span class='period'>.</span><span class='id local'>local</span><span class='lparen'>(</span><span class='id year'>year</span><span class='comma'>,</span> <span class='id month'>month</span><span class='comma'>,</span> <span class='id day'>day</span><span class='rparen'>)</span>
+    <span class='id day_or_time'>day_or_time</span><span class='lparen'>(</span><span class='id day_start'>day_start</span><span class='comma'>,</span> <span class='id time_tokens'>time_tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='kw'>rescue</span> <span class='const'>ArgumentError</span>
+    <span class='kw'>nil</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_rmn_sy-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_rmn_sy</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle repeater-month-name/scalar-year</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 44</span>
+
+<span class='kw'>def</span> <span class='id handle_rmn_sy'>handle_rmn_sy</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id month'>month</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>RepeaterMonthName</span><span class='rparen'>)</span><span class='period'>.</span><span class='id index'>index</span>
+  <span class='id year'>year</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>ScalarYear</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span>
+
+  <span class='kw'>if</span> <span class='id month'>month</span> <span class='op'>==</span> <span class='int'>12</span>
+    <span class='id next_month_year'>next_month_year</span> <span class='op'>=</span> <span class='id year'>year</span> <span class='op'>+</span> <span class='int'>1</span>
+    <span class='id next_month_month'>next_month_month</span> <span class='op'>=</span> <span class='int'>1</span>
+  <span class='kw'>else</span>
+    <span class='id next_month_year'>next_month_year</span> <span class='op'>=</span> <span class='id year'>year</span>
+    <span class='id next_month_month'>next_month_month</span> <span class='op'>=</span> <span class='id month'>month</span> <span class='op'>+</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>begin</span>
+    <span class='const'>Span</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='const'>Chronic</span><span class='period'>.</span><span class='id time_class'>time_class</span><span class='period'>.</span><span class='id local'>local</span><span class='lparen'>(</span><span class='id year'>year</span><span class='comma'>,</span> <span class='id month'>month</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id time_class'>time_class</span><span class='period'>.</span><span class='id local'>local</span><span class='lparen'>(</span><span class='id next_month_year'>next_month_year</span><span class='comma'>,</span> <span class='id next_month_month'>next_month_month</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>rescue</span> <span class='const'>ArgumentError</span>
+    <span class='kw'>nil</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_s_r_p-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_s_r_p</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle scalar/repeater/pointer</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+184
+185
+186
+187
+188
+189</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 184</span>
+
+<span class='kw'>def</span> <span class='id handle_s_r_p'>handle_s_r_p</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id repeater'>repeater</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>Repeater</span><span class='rparen'>)</span>
+  <span class='id span'>span</span> <span class='op'>=</span> <span class='const'>Span</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='const'>Chronic</span><span class='period'>.</span><span class='id now'>now</span><span class='comma'>,</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id now'>now</span> <span class='op'>+</span> <span class='int'>1</span><span class='rparen'>)</span>
+
+  <span class='id handle_srp'>handle_srp</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id span'>span</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_s_r_p_a-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_s_r_p_a</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle scalar/repeater/pointer/anchor</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+198
+199
+200
+201</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 198</span>
+
+<span class='kw'>def</span> <span class='id handle_s_r_p_a'>handle_s_r_p_a</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id anchor_span'>anchor_span</span> <span class='op'>=</span> <span class='id get_anchor'>get_anchor</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>3</span><span class='op'>..</span><span class='id tokens'>tokens</span><span class='period'>.</span><span class='id size'>size</span> <span class='op'>-</span> <span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='id handle_srp'>handle_srp</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id anchor_span'>anchor_span</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_sd_rmn_sy-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_sd_rmn_sy</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle scalar-day/repeater-month-name/scalar-year</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+102
+103
+104
+105
+106</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 102</span>
+
+<span class='kw'>def</span> <span class='id handle_sd_rmn_sy'>handle_sd_rmn_sy</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id new_tokens'>new_tokens</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+  <span class='id time_tokens'>time_tokens</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='period'>.</span><span class='id last'>last</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='period'>.</span><span class='id size'>size</span> <span class='op'>-</span> <span class='int'>3</span><span class='rparen'>)</span>
+  <span class='id handle_rmn_sd_sy'>handle_rmn_sd_sy</span><span class='lparen'>(</span><span class='id new_tokens'>new_tokens</span> <span class='op'>+</span> <span class='id time_tokens'>time_tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_sd_sm_sy-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_sd_sm_sy</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle scalar-day/scalar-month/scalar-year (endian little)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+125
+126
+127
+128
+129</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 125</span>
+
+<span class='kw'>def</span> <span class='id handle_sd_sm_sy'>handle_sd_sm_sy</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id new_tokens'>new_tokens</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+  <span class='id time_tokens'>time_tokens</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='period'>.</span><span class='id last'>last</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='period'>.</span><span class='id size'>size</span> <span class='op'>-</span> <span class='int'>3</span><span class='rparen'>)</span>
+  <span class='id handle_sm_sd_sy'>handle_sm_sd_sy</span><span class='lparen'>(</span><span class='id new_tokens'>new_tokens</span> <span class='op'>+</span> <span class='id time_tokens'>time_tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_sm_sd_sy-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_sm_sd_sy</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle scalar-month/scalar-day/scalar-year (endian middle)</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 109</span>
+
+<span class='kw'>def</span> <span class='id handle_sm_sd_sy'>handle_sm_sd_sy</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id month'>month</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>ScalarMonth</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span>
+  <span class='id day'>day</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>ScalarDay</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span>
+  <span class='id year'>year</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>ScalarYear</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span>
+
+  <span class='id time_tokens'>time_tokens</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='period'>.</span><span class='id last'>last</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='period'>.</span><span class='id size'>size</span> <span class='op'>-</span> <span class='int'>3</span><span class='rparen'>)</span>
+
+  <span class='kw'>begin</span>
+    <span class='id day_start'>day_start</span> <span class='op'>=</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id time_class'>time_class</span><span class='period'>.</span><span class='id local'>local</span><span class='lparen'>(</span><span class='id year'>year</span><span class='comma'>,</span> <span class='id month'>month</span><span class='comma'>,</span> <span class='id day'>day</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>    <span class='id day_or_time'>day_or_time</span><span class='lparen'>(</span><span class='id day_start'>day_start</span><span class='comma'>,</span> <span class='id time_tokens'>time_tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='kw'>rescue</span> <span class='const'>ArgumentError</span>
+    <span class='kw'>nil</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_sm_sy-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_sm_sy</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle scalar-month/scalar-year</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 139</span>
+
+<span class='kw'>def</span> <span class='id handle_sm_sy'>handle_sm_sy</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id month'>month</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>ScalarMonth</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span>
+  <span class='id year'>year</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>ScalarYear</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span>
+
+  <span class='kw'>if</span> <span class='id month'>month</span> <span class='op'>==</span> <span class='int'>12</span>
+    <span class='id next_month_year'>next_month_year</span> <span class='op'>=</span> <span class='id year'>year</span> <span class='op'>+</span> <span class='int'>1</span>
+    <span class='id next_month_month'>next_month_month</span> <span class='op'>=</span> <span class='int'>1</span>
+  <span class='kw'>else</span>
+    <span class='id next_month_year'>next_month_year</span> <span class='op'>=</span> <span class='id year'>year</span>
+    <span class='id next_month_month'>next_month_month</span> <span class='op'>=</span> <span class='id month'>month</span> <span class='op'>+</span> <span class='int'>1</span>
+  <span class='kw'>end</span>
+
+  <span class='kw'>begin</span>
+    <span class='const'>Span</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='const'>Chronic</span><span class='period'>.</span><span class='id time_class'>time_class</span><span class='period'>.</span><span class='id local'>local</span><span class='lparen'>(</span><span class='id year'>year</span><span class='comma'>,</span> <span class='id month'>month</span><span class='rparen'>)</span><span class='comma'>,</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id time_class'>time_class</span><span class='period'>.</span><span class='id local'>local</span><span class='lparen'>(</span><span class='id next_month_year'>next_month_year</span><span class='comma'>,</span> <span class='id next_month_month'>next_month_month</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='kw'>rescue</span> <span class='const'>ArgumentError</span>
+    <span class='kw'>nil</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_srp-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_srp</strong>(tokens, span, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle scalar/repeater/pointer helper</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+175
+176
+177
+178
+179
+180
+181</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 175</span>
+
+<span class='kw'>def</span> <span class='id handle_srp'>handle_srp</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id span'>span</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id distance'>distance</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>Scalar</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span>
+  <span class='id repeater'>repeater</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>Repeater</span><span class='rparen'>)</span>
+  <span class='id pointer'>pointer</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id get_tag'>get_tag</span><span class='lparen'>(</span><span class='const'>Pointer</span><span class='rparen'>)</span><span class='period'>.</span><span class='id type'>type</span>
+
+  <span class='id repeater'>repeater</span><span class='period'>.</span><span class='id offset'>offset</span><span class='lparen'>(</span><span class='id span'>span</span><span class='comma'>,</span> <span class='id distance'>distance</span><span class='comma'>,</span> <span class='id pointer'>pointer</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="handle_sy_sm_sd-instance_method">
+  
+    - (<tt>Object</tt>) <strong>handle_sy_sm_sd</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Handle scalar-year/scalar-month/scalar-day</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+132
+133
+134
+135
+136</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/handlers.rb', line 132</span>
+
+<span class='kw'>def</span> <span class='id handle_sy_sm_sd'>handle_sy_sm_sd</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span> <span class='comment'>#:nodoc:
+</span>  <span class='id new_tokens'>new_tokens</span> <span class='op'>=</span> <span class='lbracket'>[</span><span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>2</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='id tokens'>tokens</span><span class='lbracket'>[</span><span class='int'>0</span><span class='rbracket'>]</span><span class='rbracket'>]</span>
+  <span class='id time_tokens'>time_tokens</span> <span class='op'>=</span> <span class='id tokens'>tokens</span><span class='period'>.</span><span class='id last'>last</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='period'>.</span><span class='id size'>size</span> <span class='op'>-</span> <span class='int'>3</span><span class='rparen'>)</span>
+  <span class='id handle_sm_sd_sy'>handle_sm_sd_sy</span><span class='lparen'>(</span><span class='id new_tokens'>new_tokens</span> <span class='op'>+</span> <span class='id time_tokens'>time_tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Fri Jun 10 09:39:39 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.1 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

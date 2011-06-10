@@ -1,0 +1,249 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>
+  File: README
+  
+    &mdash; Chronic - Natural language date/time parsing
+  
+</title>
+
+  <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="_index.html" title="Index">Index</a> &raquo; 
+    <span class="title">File: README</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><div id='filecontents'><h1>Chronic</h1>
+
+<h2>DESCRIPTION</h2>
+
+<p>Chronic is a natural language date/time parser written in pure Ruby. See below
+for the wide variety of formats Chronic will parse.</p>
+
+<h2>INSTALLATION</h2>
+
+<h3>RubyGems</h3>
+
+<pre class="code">$ [sudo] gem install chronic
+</pre>
+
+<h3>GitHub</h3>
+
+<pre class="code">$ git clone git://github.com/mojombo/chronic.git
+$ cd chronic &amp;&amp; gem build chronic.gemspec
+$ gem install chronic-&lt;version&gt;.gem
+</pre>
+
+<h2>USAGE</h2>
+
+<p>You can parse strings containing a natural language date using the
+<code>Chronic.parse</code> method.</p>
+
+<pre class="code"><span class='id require'>require</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>chronic</span><span class='tstring_end'>'</span></span>
+
+<span class='const'>Time</span><span class='period'>.</span><span class='id now'>now</span>   <span class='comment'>#=&gt; Sun Aug 27 23:18:25 PDT 2006
+</span>
+<span class='const'>Chronic</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>tomorrow</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'>#=&gt; Mon Aug 28 12:00:00 PDT 2006
+</span>
+<span class='const'>Chronic</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>monday</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:context</span> <span class='op'>=&gt;</span> <span class='symbol'>:past</span><span class='rparen'>)</span>
+  <span class='comment'>#=&gt; Mon Aug 21 12:00:00 PDT 2006
+</span>
+<span class='const'>Chronic</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>this tuesday 5:00</span><span class='tstring_end'>'</span></span><span class='rparen'>)</span>
+  <span class='comment'>#=&gt; Tue Aug 29 17:00:00 PDT 2006
+</span>
+<span class='const'>Chronic</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>this tuesday 5:00</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:ambiguous_time_range</span> <span class='op'>=&gt;</span> <span class='symbol'>:none</span><span class='rparen'>)</span>
+  <span class='comment'>#=&gt; Tue Aug 29 05:00:00 PDT 2006
+</span>
+<span class='const'>Chronic</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>may 27th</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:now</span> <span class='op'>=&gt;</span> <span class='const'>Time</span><span class='period'>.</span><span class='id local'>local</span><span class='lparen'>(</span><span class='int'>2000</span><span class='comma'>,</span> <span class='int'>1</span><span class='comma'>,</span> <span class='int'>1</span><span class='rparen'>)</span><span class='rparen'>)</span>
+  <span class='comment'>#=&gt; Sat May 27 12:00:00 PDT 2000
+</span>
+<span class='const'>Chronic</span><span class='period'>.</span><span class='id parse'>parse</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>may 27th</span><span class='tstring_end'>'</span></span><span class='comma'>,</span> <span class='symbol'>:guess</span> <span class='op'>=&gt;</span> <span class='kw'>false</span><span class='rparen'>)</span>
+  <span class='comment'>#=&gt; Sun May 27 00:00:00 PDT 2007..Mon May 28 00:00:00 PDT 2007
+</span></pre>
+
+<p>See <code>Chronic.parse</code> for detailed usage instructions.</p>
+
+<h2>EXAMPLES</h2>
+
+<p>Chronic can parse a huge variety of date and time formats. Following is a
+small sample of strings that will be properly parsed. Parsing is case
+insensitive and will handle common abbreviations and misspellings.</p>
+
+<p>Simple</p>
+
+<ul>
+<li>thursday</li>
+<li>november</li>
+<li>summer</li>
+<li>friday 13:00</li>
+<li>mon 2:35</li>
+<li>4pm</li>
+<li>6 in the morning</li>
+<li>friday 1pm</li>
+<li>sat 7 in the evening</li>
+<li>yesterday</li>
+<li>today</li>
+<li>tomorrow</li>
+<li>this tuesday</li>
+<li>next month</li>
+<li>last winter</li>
+<li>this morning</li>
+<li>last night</li>
+<li>this second</li>
+<li>yesterday at 4:00</li>
+<li>last friday at 20:00</li>
+<li>last week tuesday</li>
+<li>tomorrow at 6:45pm</li>
+<li>afternoon yesterday</li>
+<li>thursday last week</li>
+</ul>
+
+
+<p>Complex</p>
+
+<ul>
+<li>3 years ago</li>
+<li>5 months before now</li>
+<li>7 hours ago</li>
+<li>7 days from now</li>
+<li>1 week hence</li>
+<li>in 3 hours</li>
+<li>1 year ago tomorrow</li>
+<li>3 months ago saturday at 5:00 pm</li>
+<li>7 hours before tomorrow at noon</li>
+<li>3rd wednesday in november</li>
+<li>3rd month next year</li>
+<li>3rd thursday this september</li>
+<li>4th day last week</li>
+</ul>
+
+
+<p>Specific Dates</p>
+
+<ul>
+<li>January 5</li>
+<li>February twenty first</li>
+<li>dec 25</li>
+<li>may 27th</li>
+<li>October 2006</li>
+<li>oct 06</li>
+<li>jan 3 2010</li>
+<li>february 14, 2004</li>
+<li>february 14th, 2004</li>
+<li>3 jan 2000</li>
+<li>17 april 85</li>
+<li>5/27/1979</li>
+<li>27/5/1979</li>
+<li>05/06</li>
+<li>1979-05-27</li>
+<li>Friday</li>
+<li>5</li>
+<li>4:00</li>
+<li>17:00</li>
+<li>0800</li>
+</ul>
+
+
+<p>Specific Times (many of the above with an added time)</p>
+
+<ul>
+<li>January 5 at 7pm</li>
+<li>1979-05-27 05:00:00</li>
+<li>etc</li>
+</ul>
+
+
+<h2>TIME ZONES</h2>
+
+<p>Chronic allows you to set which Time class to use when constructing times. By
+default, the built in Ruby time class creates times in your system's local
+time zone. You can set this to something like ActiveSupport's TimeZone class
+to get full time zone support.</p>
+
+<pre class="code">&gt;&gt; Time.zone = &quot;UTC&quot;
+&gt;&gt; Chronic.time_class = Time.zone
+&gt;&gt; Chronic.parse(&quot;June 15 2006 at 5:45 AM&quot;)
+=&gt; Thu, 15 Jun 2006 05:45:00 UTC +00:00
+</pre>
+
+<h2>LIMITATIONS</h2>
+
+<p>Chronic uses Ruby's built in Time class for all time storage and computation.
+Because of this, only times that the Time class can handle will be properly
+parsed. Parsing for times outside of this range will simply return nil.
+Support for a wider range of times is planned for a future release.</p>
+
+<h2>CONTRIBUTE</h2>
+
+<p>If you'd like to hack on Chronic, start by forking the repo on GitHub:</p>
+
+<p><a href="https://github.com/mojombo/chronic">https://github.com/mojombo/chronic</a></p>
+
+<p>To get all of the dependencies, install the gem first. The best way to get
+your changes merged back into core is as follows:</p>
+
+<ol>
+<li>Clone down your fork</li>
+<li>Create a thoughtfully named topic branch to contain your change</li>
+<li>Hack away</li>
+<li>Add tests and make sure everything still passes by running <code>rake</code></li>
+<li>Ensure your tests pass in multiple timezones</li>
+<li>If you are adding new functionality, document it in the README</li>
+<li>Do not change the version number, we will do that on our end</li>
+<li>If necessary, rebase your commits into logical chunks, without errors</li>
+<li>Push the branch up to GitHub</li>
+<li>Send a pull request for your branch</li>
+</ol>
+
+</div></div>
+    
+    <div id="footer">
+  Generated on Fri Jun 10 09:39:38 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.1 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,1215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>
+  Class: Chronic::Repeater
+  
+    &mdash; Chronic - Natural language date/time parsing
+  
+</title>
+
+  <link rel="stylesheet" href="../css/style.css" type="text/css" media="screen" charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/common.css" type="text/css" media="screen" charset="utf-8" />
+
+<script type="text/javascript" charset="utf-8">
+  relpath = '..';
+  if (relpath != '') relpath += '/';
+</script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/jquery.js"></script>
+
+  <script type="text/javascript" charset="utf-8" src="../js/app.js"></script>
+
+
+  </head>
+  <body>
+    <script type="text/javascript" charset="utf-8">
+      if (window.top.frames.main) document.body.className = 'frames';
+    </script>
+    
+    <div id="header">
+      <div id="menu">
+  
+    <a href="../_index.html">Index (R)</a> &raquo; 
+    <span class='title'><span class='object_link'><a href="../Chronic.html" title="Chronic (module)">Chronic</a></span></span>
+     &raquo; 
+    <span class="title">Repeater</span>
+  
+  
+  <div class="noframes"><span class="title">(</span><a href="." target="_top">no frames</a><span class="title">)</span></div>
+</div>
+
+      <div id="search">
+  
+    <a id="class_list_link" href="#">Class List</a>
+  
+    <a id="method_list_link" href="#">Method List</a>
+  
+    <a id="file_list_link" href="#">File List</a>
+  
+</div>
+      <div class="clear"></div>
+    </div>
+    
+    <iframe id="search_frame"></iframe>
+    
+    <div id="content"><h1>Class: Chronic::Repeater
+  
+  
+  
+</h1>
+
+<dl class="box">
+  
+    <dt class="r1">Inherits:</dt>
+    <dd class="r1">
+      <span class="inheritName"><span class='object_link'><a href="Tag.html" title="Chronic::Tag (class)">Tag</a></span></span>
+      
+        <ul class="fullTree">
+          <li>Object</li>
+          
+            <li class="next"><span class='object_link'><a href="Tag.html" title="Chronic::Tag (class)">Tag</a></span></li>
+          
+            <li class="next">Chronic::Repeater</li>
+          
+        </ul>
+        <a href="#" class="inheritanceTree">show all</a>
+      
+      </dd>
+    
+  
+  
+    
+  
+    
+  
+  
+  
+    <dt class="r2 last">Defined in:</dt>
+    <dd class="r2 last">lib/chronic/repeater.rb</dd>
+  
+</dl>
+<div class="clear"></div>
+
+<div id="subclasses">
+  <h2>Direct Known Subclasses</h2>
+  <p class="children"><span class='object_link'><a href="RepeaterDay.html" title="Chronic::RepeaterDay (class)">RepeaterDay</a></span>, <span class='object_link'><a href="RepeaterDayName.html" title="Chronic::RepeaterDayName (class)">RepeaterDayName</a></span>, <span class='object_link'><a href="RepeaterDayPortion.html" title="Chronic::RepeaterDayPortion (class)">RepeaterDayPortion</a></span>, <span class='object_link'><a href="RepeaterFortnight.html" title="Chronic::RepeaterFortnight (class)">RepeaterFortnight</a></span>, <span class='object_link'><a href="RepeaterHour.html" title="Chronic::RepeaterHour (class)">RepeaterHour</a></span>, <span class='object_link'><a href="RepeaterMinute.html" title="Chronic::RepeaterMinute (class)">RepeaterMinute</a></span>, <span class='object_link'><a href="RepeaterMonth.html" title="Chronic::RepeaterMonth (class)">RepeaterMonth</a></span>, <span class='object_link'><a href="RepeaterMonthName.html" title="Chronic::RepeaterMonthName (class)">RepeaterMonthName</a></span>, <span class='object_link'><a href="RepeaterSeason.html" title="Chronic::RepeaterSeason (class)">RepeaterSeason</a></span>, <span class='object_link'><a href="RepeaterSecond.html" title="Chronic::RepeaterSecond (class)">RepeaterSecond</a></span>, <span class='object_link'><a href="RepeaterTime.html" title="Chronic::RepeaterTime (class)">RepeaterTime</a></span>, <span class='object_link'><a href="RepeaterWeek.html" title="Chronic::RepeaterWeek (class)">RepeaterWeek</a></span>, <span class='object_link'><a href="RepeaterWeekday.html" title="Chronic::RepeaterWeekday (class)">RepeaterWeekday</a></span>, <span class='object_link'><a href="RepeaterWeekend.html" title="Chronic::RepeaterWeekend (class)">RepeaterWeekend</a></span>, <span class='object_link'><a href="RepeaterYear.html" title="Chronic::RepeaterYear (class)">RepeaterYear</a></span></p>
+</div>
+
+
+  
+  
+  
+  
+
+
+  
+  
+  
+  <h2>Instance Attribute Summary</h2>
+  
+  <h3 class="inherited">Attributes inherited from <span class='object_link'><a href="Tag.html" title="Chronic::Tag (class)">Tag</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Tag.html#type-instance_method" title="Chronic::Tag#type (method)">type</a></span></p>
+
+
+  
+    <h2>
+      Class Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scan-class_method" title="scan (class method)">+ (Array) <strong>scan</strong>(tokens, options) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>Scan an Array of <span class='object_link'><a href="Token.html" title="Chronic::Token (class)">Token</a></span>s and apply any necessary Repeater tags to
+each token.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scan_for_day_names-class_method" title="scan_for_day_names (class method)">+ (RepeaterDayName<sup>?</sup>) <strong>scan_for_day_names</strong>(token) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scan_for_day_portions-class_method" title="scan_for_day_portions (class method)">+ (RepeaterDayPortion<sup>?</sup>) <strong>scan_for_day_portions</strong>(token) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scan_for_month_names-class_method" title="scan_for_month_names (class method)">+ (RepeaterMonthName<sup>?</sup>) <strong>scan_for_month_names</strong>(token) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scan_for_season_names-class_method" title="scan_for_season_names (class method)">+ (RepeaterSeasonName<sup>?</sup>) <strong>scan_for_season_names</strong>(token) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scan_for_times-class_method" title="scan_for_times (class method)">+ (RepeaterTime<sup>?</sup>) <strong>scan_for_times</strong>(token) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#scan_for_units-class_method" title="scan_for_units (class method)">+ (Repeater) <strong>scan_for_units</strong>(token) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>A new instance of a subclass of Repeater.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+    <h2>
+      Instance Method Summary
+      <small>(<a href="#" class="summary_toggle">collapse</a>)</small>
+    </h2>
+
+    <ul class="summary">
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#%3C%3D%3E-instance_method" title="#&lt;=&gt; (instance method)">- (Object) <strong>&lt;=&gt;</strong>(other) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#next-instance_method" title="#next (instance method)">- (Object) <strong>next</strong>(pointer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>returns the next occurance of this repeatable.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#this-instance_method" title="#this (instance method)">- (Object) <strong>this</strong>(pointer) </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#to_s-instance_method" title="#to_s (instance method)">- (Object) <strong>to_s</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="#width-instance_method" title="#width (instance method)">- (Object) <strong>width</strong> </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'><p>returns the width (in seconds or months) of this repeatable.</p>
+</div></span>
+  
+</li>
+
+      
+    </ul>
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+  <h3 class="inherited">Methods inherited from <span class='object_link'><a href="Tag.html" title="Chronic::Tag (class)">Tag</a></span></h3>
+  <p class="inherited"><span class='object_link'><a href="Tag.html#initialize-instance_method" title="Chronic::Tag#initialize (method)">#initialize</a></span>, <span class='object_link'><a href="Tag.html#start%3D-instance_method" title="Chronic::Tag#start= (method)">#start=</a></span></p>
+<div id="constructor_details" class="method_details_list">
+  <h2>Constructor Details</h2>
+  
+    <p class="notice">This class inherits a constructor from <span class='object_link'><a href="Tag.html#initialize-instance_method" title="Chronic::Tag#initialize (method)">Chronic::Tag</a></span></p>
+  
+</div>
+
+
+  <div id="class_method_details" class="method_details_list">
+    <h2>Class Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="scan-class_method">
+  
+    + (<tt>Array</tt>) <strong>scan</strong>(tokens, options) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>Scan an Array of <span class='object_link'><a href="Token.html" title="Chronic::Token (class)">Token</a></span>s and apply any necessary Repeater tags to
+each token</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>tokens</span>
+      
+      
+        <span class='type'>(<tt>Array&lt;<span class='object_link'><a href="Token.html" title="Chronic::Token (class)">Token</a></span>&gt;</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Array of tokens to scan</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>options</span>
+      
+      
+        <span class='type'>(<tt>Hash</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>Options specified in <span class='object_link'><a href="../Chronic.html#parse-class_method" title="Chronic.parse (method)">Chronic.parse</a></span></p>
+</div>
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt>Array</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>list of tokens</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/repeater.rb', line 10</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id scan'>scan</span><span class='lparen'>(</span><span class='id tokens'>tokens</span><span class='comma'>,</span> <span class='id options'>options</span><span class='rparen'>)</span>
+  <span class='id tokens'>tokens</span><span class='period'>.</span><span class='id each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id token'>token</span><span class='op'>|</span>
+    <span class='kw'>if</span> <span class='id t'>t</span> <span class='op'>=</span> <span class='id scan_for_season_names'>scan_for_season_names</span><span class='lparen'>(</span><span class='id token'>token</span><span class='rparen'>)</span> <span class='kw'>then</span> <span class='id token'>token</span><span class='period'>.</span><span class='id tag'>tag</span><span class='lparen'>(</span><span class='id t'>t</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>next</span> <span class='kw'>end</span>
+    <span class='kw'>if</span> <span class='id t'>t</span> <span class='op'>=</span> <span class='id scan_for_month_names'>scan_for_month_names</span><span class='lparen'>(</span><span class='id token'>token</span><span class='rparen'>)</span> <span class='kw'>then</span> <span class='id token'>token</span><span class='period'>.</span><span class='id tag'>tag</span><span class='lparen'>(</span><span class='id t'>t</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>next</span> <span class='kw'>end</span>
+    <span class='kw'>if</span> <span class='id t'>t</span> <span class='op'>=</span> <span class='id scan_for_day_names'>scan_for_day_names</span><span class='lparen'>(</span><span class='id token'>token</span><span class='rparen'>)</span> <span class='kw'>then</span> <span class='id token'>token</span><span class='period'>.</span><span class='id tag'>tag</span><span class='lparen'>(</span><span class='id t'>t</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>next</span> <span class='kw'>end</span>
+    <span class='kw'>if</span> <span class='id t'>t</span> <span class='op'>=</span> <span class='id scan_for_day_portions'>scan_for_day_portions</span><span class='lparen'>(</span><span class='id token'>token</span><span class='rparen'>)</span> <span class='kw'>then</span> <span class='id token'>token</span><span class='period'>.</span><span class='id tag'>tag</span><span class='lparen'>(</span><span class='id t'>t</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>next</span> <span class='kw'>end</span>
+    <span class='kw'>if</span> <span class='id t'>t</span> <span class='op'>=</span> <span class='id scan_for_times'>scan_for_times</span><span class='lparen'>(</span><span class='id token'>token</span><span class='rparen'>)</span> <span class='kw'>then</span> <span class='id token'>token</span><span class='period'>.</span><span class='id tag'>tag</span><span class='lparen'>(</span><span class='id t'>t</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>next</span> <span class='kw'>end</span>
+    <span class='kw'>if</span> <span class='id t'>t</span> <span class='op'>=</span> <span class='id scan_for_units'>scan_for_units</span><span class='lparen'>(</span><span class='id token'>token</span><span class='rparen'>)</span> <span class='kw'>then</span> <span class='id token'>token</span><span class='period'>.</span><span class='id tag'>tag</span><span class='lparen'>(</span><span class='id t'>t</span><span class='rparen'>)</span><span class='semicolon'>;</span> <span class='kw'>next</span> <span class='kw'>end</span>
+  <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="scan_for_day_names-class_method">
+  
+    + (<tt><span class='object_link'><a href="RepeaterDayName.html" title="Chronic::RepeaterDayName (class)">RepeaterDayName</a></span></tt><sup>?</sup>) <strong>scan_for_day_names</strong>(token) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>token</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Token.html" title="Chronic::Token (class)">Token</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="RepeaterDayName.html" title="Chronic::RepeaterDayName (class)">RepeaterDayName</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/repeater.rb', line 55</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id scan_for_day_names'>scan_for_day_names</span><span class='lparen'>(</span><span class='id token'>token</span><span class='rparen'>)</span>
+  <span class='id scan_for'>scan_for</span> <span class='id token'>token</span><span class='comma'>,</span> <span class='const'>RepeaterDayName</span><span class='comma'>,</span>
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^m[ou]n(day)?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:monday</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^t(ue|eu|oo|u|)s(day)?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:tuesday</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^tue$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:tuesday</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^we(dnes|nds|nns)day$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:wednesday</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^wed$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:wednesday</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^th(urs|ers)day$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:thursday</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^thu(rs)?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:thursday</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^fr[iy](day)?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:friday</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^sat(t?[ue]rday)?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:saturday</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^su[nm](day)?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:sunday</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="scan_for_day_portions-class_method">
+  
+    + (<tt><span class='object_link'><a href="RepeaterDayPortion.html" title="Chronic::RepeaterDayPortion (class)">RepeaterDayPortion</a></span></tt><sup>?</sup>) <strong>scan_for_day_portions</strong>(token) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>token</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Token.html" title="Chronic::Token (class)">Token</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="RepeaterDayPortion.html" title="Chronic::RepeaterDayPortion (class)">RepeaterDayPortion</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/repeater.rb', line 73</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id scan_for_day_portions'>scan_for_day_portions</span><span class='lparen'>(</span><span class='id token'>token</span><span class='rparen'>)</span>
+  <span class='id scan_for'>scan_for</span> <span class='id token'>token</span><span class='comma'>,</span> <span class='const'>RepeaterDayPortion</span><span class='comma'>,</span>
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^ams?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:am</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^pms?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:pm</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^mornings?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:morning</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^afternoons?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:afternoon</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^evenings?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:evening</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^(night|nite)s?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:night</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="scan_for_month_names-class_method">
+  
+    + (<tt><span class='object_link'><a href="RepeaterMonthName.html" title="Chronic::RepeaterMonthName (class)">RepeaterMonthName</a></span></tt><sup>?</sup>) <strong>scan_for_month_names</strong>(token) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>token</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Token.html" title="Chronic::Token (class)">Token</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="RepeaterMonthName.html" title="Chronic::RepeaterMonthName (class)">RepeaterMonthName</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/repeater.rb', line 35</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id scan_for_month_names'>scan_for_month_names</span><span class='lparen'>(</span><span class='id token'>token</span><span class='rparen'>)</span>
+  <span class='id scan_for'>scan_for</span> <span class='id token'>token</span><span class='comma'>,</span> <span class='const'>RepeaterMonthName</span><span class='comma'>,</span>
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^jan\.?(uary)?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:january</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^feb\.?(ruary)?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:february</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^mar\.?(ch)?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:march</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^apr\.?(il)?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:april</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^may$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:may</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^jun\.?e?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:june</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^jul\.?y?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:july</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^aug\.?(ust)?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:august</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^sep\.?(t\.?|tember)?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:september</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^oct\.?(ober)?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:october</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^nov\.?(ember)?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:november</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^dec\.?(ember)?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:december</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="scan_for_season_names-class_method">
+  
+    + (<tt><span class='object_link'><a href="RepeaterSeasonName.html" title="Chronic::RepeaterSeasonName (class)">RepeaterSeasonName</a></span></tt><sup>?</sup>) <strong>scan_for_season_names</strong>(token) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>token</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Token.html" title="Chronic::Token (class)">Token</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="RepeaterSeasonName.html" title="Chronic::RepeaterSeasonName (class)">RepeaterSeasonName</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+23
+24
+25
+26
+27
+28
+29
+30
+31</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/repeater.rb', line 23</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id scan_for_season_names'>scan_for_season_names</span><span class='lparen'>(</span><span class='id token'>token</span><span class='rparen'>)</span>
+  <span class='id scan_for'>scan_for</span> <span class='id token'>token</span><span class='comma'>,</span> <span class='const'>RepeaterSeasonName</span><span class='comma'>,</span>
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^springs?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:spring</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^summers?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:summer</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^(autumn)|(fall)s?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:autumn</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^winters?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:winter</span>
+  <span class='rbrace'>}</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="scan_for_times-class_method">
+  
+    + (<tt><span class='object_link'><a href="RepeaterTime.html" title="Chronic::RepeaterTime (class)">RepeaterTime</a></span></tt><sup>?</sup>) <strong>scan_for_times</strong>(token) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>token</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Token.html" title="Chronic::Token (class)">Token</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="RepeaterTime.html" title="Chronic::RepeaterTime (class)">RepeaterTime</a></span></tt>, <tt>nil</tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+87
+88
+89</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/repeater.rb', line 87</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id scan_for_times'>scan_for_times</span><span class='lparen'>(</span><span class='id token'>token</span><span class='rparen'>)</span>
+  <span class='id scan_for'>scan_for</span> <span class='id token'>token</span><span class='comma'>,</span> <span class='const'>RepeaterTime</span><span class='comma'>,</span> <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^\d{1,2}(:?\d{2})?([\.:]?\d{2})?$</span><span class='regexp_end'>/</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="scan_for_units-class_method">
+  
+    + (<tt><span class='object_link'><a href="" title="Chronic::Repeater (class)">Repeater</a></span></tt>) <strong>scan_for_units</strong>(token) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>A new instance of a subclass of Repeater</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <h3>Parameters:</h3>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>token</span>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="Token.html" title="Chronic::Token (class)">Token</a></span></tt>)</span>
+      
+      
+      
+    </li>
+  
+</ul>
+<h3>Returns:</h3>
+<ul class="return">
+  
+    <li>
+      
+      
+        <span class='type'>(<tt><span class='object_link'><a href="" title="Chronic::Repeater (class)">Repeater</a></span></tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'><p>A new instance of a subclass of Repeater</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/repeater.rb', line 93</span>
+
+<span class='kw'>def</span> <span class='kw'>self</span><span class='period'>.</span><span class='id scan_for_units'>scan_for_units</span><span class='lparen'>(</span><span class='id token'>token</span><span class='rparen'>)</span>
+  <span class='lbrace'>{</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^years?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:year</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^seasons?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:season</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^months?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:month</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^fortnights?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:fortnight</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^weeks?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:week</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^weekends?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:weekend</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^(week|business)days?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:weekday</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^days?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:day</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^hours?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:hour</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^minutes?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:minute</span><span class='comma'>,</span>
+    <span class='tstring'><span class='regexp_beg'>/</span><span class='tstring_content'>^seconds?$</span><span class='regexp_end'>/</span></span> <span class='op'>=&gt;</span> <span class='symbol'>:second</span>
+  <span class='rbrace'>}</span><span class='period'>.</span><span class='id each'>each</span> <span class='kw'>do</span> <span class='op'>|</span><span class='id item'>item</span><span class='comma'>,</span> <span class='id symbol'>symbol</span><span class='op'>|</span>
+    <span class='kw'>if</span> <span class='id item'>item</span> <span class='op'>=~</span> <span class='id token'>token</span><span class='period'>.</span><span class='id word'>word</span>
+      <span class='id klass_name'>klass_name</span> <span class='op'>=</span> <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>Repeater</span><span class='tstring_end'>'</span></span> <span class='op'>+</span> <span class='id symbol'>symbol</span><span class='period'>.</span><span class='id to_s'>to_s</span><span class='period'>.</span><span class='id capitalize'>capitalize</span>
+      <span class='id klass'>klass</span> <span class='op'>=</span> <span class='const'>Chronic</span><span class='period'>.</span><span class='id const_get'>const_get</span><span class='lparen'>(</span><span class='id klass_name'>klass_name</span><span class='rparen'>)</span>
+      <span class='kw'>return</span> <span class='id klass'>klass</span><span class='period'>.</span><span class='id new'>new</span><span class='lparen'>(</span><span class='id symbol'>symbol</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+  <span class='kw'>end</span>
+  <span class='kw'>return</span> <span class='kw'>nil</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+  <div id="instance_method_details" class="method_details_list">
+    <h2>Instance Method Details</h2>
+    
+    
+      <div class="method_details first">
+  <p class="signature first" id="<=>-instance_method">
+  
+    - (<tt>Object</tt>) <strong>&lt;=&gt;</strong>(other) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+116
+117
+118</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/repeater.rb', line 116</span>
+
+<span class='kw'>def</span> <span class='op'>&lt;=&gt;</span><span class='lparen'>(</span><span class='id other'>other</span><span class='rparen'>)</span>
+  <span class='id width'>width</span> <span class='op'>&lt;=&gt;</span> <span class='id other'>other</span><span class='period'>.</span><span class='id width'>width</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="next-instance_method">
+  
+    - (<tt>Object</tt>) <strong>next</strong>(pointer) 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>returns the next occurance of this repeatable.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+126
+127
+128</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/repeater.rb', line 126</span>
+
+<span class='kw'>def</span> <span class='kw'>next</span><span class='lparen'>(</span><span class='id pointer'>pointer</span><span class='rparen'>)</span>
+  <span class='id raise'>raise</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Start point must be set before calling #next</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@now</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="this-instance_method">
+  
+    - (<tt>Object</tt>) <strong>this</strong>(pointer) 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+130
+131
+132</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/repeater.rb', line 130</span>
+
+<span class='kw'>def</span> <span class='id this'>this</span><span class='lparen'>(</span><span class='id pointer'>pointer</span><span class='rparen'>)</span>
+  <span class='id raise'>raise</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Start point must be set before calling #this</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>unless</span> <span class='ivar'>@now</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="to_s-instance_method">
+  
+    - (<tt>Object</tt>) <strong>to_s</strong> 
+  
+
+  
+</p><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+134
+135
+136</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/repeater.rb', line 134</span>
+
+<span class='kw'>def</span> <span class='id to_s'>to_s</span>
+  <span class='tstring'><span class='tstring_beg'>'</span><span class='tstring_content'>repeater</span><span class='tstring_end'>'</span></span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <p class="signature " id="width-instance_method">
+  
+    - (<tt>Object</tt>) <strong>width</strong> 
+  
+
+  
+</p><div class="docstring">
+  <div class="discussion">
+    <p>returns the width (in seconds or months) of this repeatable.</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+121
+122
+123</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'lib/chronic/repeater.rb', line 121</span>
+
+<span class='kw'>def</span> <span class='id width'>width</span>
+  <span class='id raise'>raise</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Repeatable#width must be overridden in subclasses</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+  </div>
+
+</div>
+    
+    <div id="footer">
+  Generated on Fri Jun 10 09:39:39 2011 by 
+  <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
+  0.7.1 (ruby-1.9.2).
+</div>
+
+  </body>
+</html>
